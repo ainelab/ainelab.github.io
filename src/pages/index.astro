@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LogoMark from '../components/LogoMark.astro';
-import { RESEARCH, METHODS, PROJECTS, PUBLICATIONS, NEWS, HIGHLIGHTS, PI, OPENINGS, TEACHING } from '../data/content.js';
+import { RESEARCH, METHODS, PUBLICATIONS, NEWS, PI, OPENINGS, TEACHING } from '../data/content.js';
 
 const nav = [
   ['Research', '#research'],
@@ -68,28 +68,6 @@ const nav = [
     <div class="absolute bottom-5 left-1/2 -translate-x-1/2 text-muted/60 text-xs mono animate-pulse">scroll ↓</div>
   </section>
 
-  <!-- HIGHLIGHTS CAROUSEL -->
-  <section aria-label="Highlights" class="relative border-t border-line/50 bg-panel/40">
-    <div class="mx-auto max-w-6xl px-5 py-6">
-      <div class="flex items-center justify-between mb-4">
-        <p class="mono text-xs tracking-[0.2em] uppercase text-brand-2">Highlights</p>
-        <div class="flex gap-2">
-          <button id="hlPrev" aria-label="Previous" class="w-8 h-8 grid place-items-center rounded-lg border border-line text-muted hover:text-white hover:border-brand transition">‹</button>
-          <button id="hlNext" aria-label="Next" class="w-8 h-8 grid place-items-center rounded-lg border border-line text-muted hover:text-white hover:border-brand transition">›</button>
-        </div>
-      </div>
-      <div id="hlTrack" class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {HIGHLIGHTS.map((h) => (
-          <article class="snap-start shrink-0 w-[85%] sm:w-[46%] lg:w-[31%] rounded-2xl border border-line bg-ink/50 p-6">
-            <p class="mono text-[11px] uppercase tracking-wide text-brand">{h.kicker}</p>
-            <h3 class="mt-2 text-lg font-bold">{h.title}</h3>
-            <p class="mt-2 text-sm text-muted leading-relaxed">{h.body}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- RESEARCH -->
   <section id="research" class="relative gridlines border-t border-line/50">
     <div class="mx-auto max-w-6xl px-5 py-20 sm:py-28">
@@ -120,31 +98,8 @@ const nav = [
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="relative border-t border-line/50 bg-panel/30">
-    <div class="mx-auto max-w-6xl px-5 py-20 sm:py-28">
-      <div class="reveal max-w-2xl">
-        <p class="mono text-xs tracking-[0.2em] uppercase text-brand-2 mb-3">Current directions</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">What we're working on</h2>
-        <p class="mt-4 text-muted leading-relaxed">Active research threads at the intersection of neural signals, clinical neuroscience, and machine learning.</p>
-      </div>
-
-      <div class="mt-12 grid gap-5 sm:grid-cols-2">
-        {PROJECTS.map((p) => (
-          <article class="reveal card-hover rounded-2xl border border-line bg-ink/40 p-6 flex flex-col">
-            <h3 class="text-lg font-bold">{p.title}</h3>
-            <p class="mt-2 text-sm text-muted leading-relaxed grow">{p.body}</p>
-            <ul class="mt-4 flex flex-wrap gap-2">
-              {p.skills.map((s) => (<li class="mono text-[11px] px-2 py-1 rounded bg-white/5 text-slate-300">{s}</li>))}
-            </ul>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- TEAM -->
-  <section id="team" class="relative gridlines border-t border-line/50">
+  <section id="team" class="relative border-t border-line/50 bg-panel/30">
     <div class="mx-auto max-w-6xl px-5 py-20 sm:py-28">
       <div class="reveal max-w-2xl">
         <p class="mono text-xs tracking-[0.2em] uppercase text-brand-2 mb-3">Team</p>
@@ -336,24 +291,6 @@ const nav = [
     const m = document.getElementById('mobileMenu');
     t?.addEventListener('click', () => m?.classList.toggle('hidden'));
     m?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => m.classList.add('hidden')));
-
-    // highlights carousel
-    const track = document.getElementById('hlTrack');
-    if (track) {
-      const step = () => Math.max(track.clientWidth * 0.6, 260);
-      document.getElementById('hlNext')?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
-      document.getElementById('hlPrev')?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
-      // gentle auto-advance, pause on hover; loops back to start
-      let paused = false;
-      track.addEventListener('pointerenter', () => (paused = true));
-      track.addEventListener('pointerleave', () => (paused = false));
-      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!reduced) setInterval(() => {
-        if (paused) return;
-        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 8) track.scrollTo({ left: 0, behavior: 'smooth' });
-        else track.scrollBy({ left: step(), behavior: 'smooth' });
-      }, 4500);
-    }
 
     // scroll reveal
     const io = new IntersectionObserver((entries) => {
