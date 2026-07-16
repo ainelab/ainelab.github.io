@@ -146,7 +146,12 @@ export const PI = {
   name: 'Dr. Himanshu Kumar',
   role: 'Principal Investigator · Assistant Professor',
   affil: 'Mehta Family School of Biosciences & Biomedical Engineering, IIT Indore',
-  bio: 'Biomedical signal processing, neurotechnology, and machine learning — EEG/SEEG/MEG, seizure characterisation, affective computing, and brain-network analysis. Previously postdoc at Cleveland Clinic Epilepsy Center and guest scientist at University Hospital RWTH Aachen. PhD, IIT Madras.',
+  bio: 'Biomedical signal processing, neurotechnology, and machine learning — EEG/SEEG/MEG, seizure characterisation, affective computing, and brain-network analysis. Previously postdoc at Cleveland Clinic Epilepsy Center and, as a DAAD Bi-National Guided Research Fellow, guest scientist at University Hospital RWTH Aachen (with Prof. Ute Habel). PhD, IIT Madras.',
+  awards: [
+    'DAAD Bi-National Guided Research Fellow — RWTH Aachen',
+    'Postdoctoral Fellow — Cleveland Clinic Epilepsy Center',
+    'Medal for academic excellence — IIIT Allahabad',
+  ],
   links: [
     ['Website', 'https://himsriv24.github.io'],
     ['Scholar', 'https://scholar.google.com/citations?user=rlqKrlwAAAAJ'],
