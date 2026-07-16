@@ -24,7 +24,13 @@ const nav = [
           </span>
         </a>
         <span class="hidden sm:block w-px h-8 bg-line"></span>
-        <img src="/iiti-logo.png" alt="IIT Indore" width="36" height="40" class="h-9 w-auto bg-white/95 rounded-md p-1" />
+        <div class="flex items-center gap-2.5">
+          <img src="/iiti-logo.png" alt="IIT Indore" width="36" height="40" class="h-9 w-auto bg-white/95 rounded-md p-1" />
+          <span class="hidden lg:block leading-tight">
+            <b class="block text-[15px] tracking-tight">IIT Indore</b>
+            <span class="block text-[11px] text-muted">Indian Institute of Technology Indore</span>
+          </span>
+        </div>
       </div>
       <div class="hidden md:flex items-center gap-1">
         {nav.map(([label, href]) => (
