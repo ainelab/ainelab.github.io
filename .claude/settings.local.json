@@ -50,7 +50,9 @@
       "Bash(cp \"/Users/himanshukumar/Documents/B8745022-3D1B-4246-A8C3-6B78F5EA88C4_1_201_a.jpeg\" public/himanshu-kumar.jpg)",
       "Bash(file public/*)",
       "Bash(rm -f team2.jpeg team3.jpeg)",
-      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Add PI photo and IIT Indore logo *)"
+      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Add PI photo and IIT Indore logo *)",
+      "Bash(rm -f logo-nav.jpeg)",
+      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Add connectome logo mark and favicon *)"
     ]
   }
 }
