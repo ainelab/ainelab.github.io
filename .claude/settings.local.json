@@ -62,7 +62,8 @@
       "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Add IIT Indore logo to the nav *)",
       "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Add DAAD fellowship and awards to PI profile *)",
       "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Drop supervisor name from PI bio *)",
-      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Cut redundant research sections *)"
+      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Cut redundant research sections *)",
+      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Drop transcript from join instructions *)"
     ]
   }
 }
