@@ -43,7 +43,9 @@
       "Bash(lsof -ti:4321)",
       "Bash(xargs kill)",
       "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Use PI email and office address in contact *)",
-      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Remove hero stat tiles *)"
+      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Remove hero stat tiles *)",
+      "WebFetch(domain:ayushayt.github.io)",
+      "Bash(rm -f team.jpeg news.jpeg mobile-carousel*.jpeg)"
     ]
   }
 }

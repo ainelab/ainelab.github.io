@@ -123,3 +123,46 @@ export const STATS = [
   ['20+', 'publications', 'journals & conferences'],
   ['∞', 'brain networks', 'dynamic & interpretable'],
 ];
+
+// Dated updates — newest first. Seeded from recent publications & lab milestones; edit freely.
+export const NEWS = [
+  { date: 'May 2026', tag: 'Publication', text: 'New paper on subject-independent EEG emotion recognition with bispectral features and explainable ML published in Biomedical Physics & Engineering Express.' },
+  { date: 'Apr 2026', tag: 'Publication', text: 'Work on envelope-based changepoint segmentation of seizures in stereotactic EEG published in Annals of Biomedical Engineering.' },
+  { date: 'Apr 2026', tag: 'Publication', text: 'EEG emotion recognition with super-resolution superlet transform and self-attention CNN published in Biomedical Signal Processing and Control.' },
+  { date: '2026', tag: 'Preprint', text: 'MEG-derived network control metrics for temporal lobe epilepsy accepted at Epilepsia.' },
+  { date: '2026', tag: 'Lab', text: 'AI-NE Lab established at IIT Indore — now recruiting PhD, M.Tech, and undergraduate researchers.' },
+];
+
+// Highlights carousel — text-based achievement cards (no photos needed). Edit freely.
+export const HIGHLIGHTS = [
+  { kicker: 'Now recruiting', title: 'Join a brand-new lab', body: 'PhD, M.Tech, and UG positions open across EEG, MEG, SEEG, and AI for neuroscience.' },
+  { kicker: 'Clinical impact', title: 'Seizure localisation from SEEG', body: 'Data-driven segmentation and network dynamics to support epilepsy surgery decisions.' },
+  { kicker: 'Interpretable AI', title: 'Explainable models for brain data', body: 'ML that reveals physiological and clinical patterns — not just predictions.' },
+  { kicker: 'Collaborations', title: 'From bench to bedside', body: 'Ties to Cleveland Clinic Epilepsy Center and University Hospital RWTH Aachen.' },
+];
+
+// Members — the PI is real; open positions are advertised honestly instead of placeholder people.
+export const PI = {
+  name: 'Dr. Himanshu Kumar',
+  role: 'Principal Investigator · Assistant Professor',
+  affil: 'Mehta Family School of Biosciences & Biomedical Engineering, IIT Indore',
+  bio: 'Biomedical signal processing, neurotechnology, and machine learning — EEG/SEEG/MEG, seizure characterisation, affective computing, and brain-network analysis. Previously postdoc at Cleveland Clinic Epilepsy Center and guest scientist at University Hospital RWTH Aachen. PhD, IIT Madras.',
+  links: [
+    ['Website', 'https://himsriv24.github.io'],
+    ['Scholar', 'https://scholar.google.com/citations?user=rlqKrlwAAAAJ'],
+    ['ORCID', 'https://orcid.org/0000-0003-3255-4588'],
+    ['Email', 'mailto:himanshu@iiti.ac.in'],
+  ],
+};
+
+export const OPENINGS = [
+  { level: 'PhD', body: 'Fully engaged doctoral research in neural signal processing, epilepsy, or AI for neuroscience.' },
+  { level: 'M.Tech', body: 'Thesis projects on EEG/MEG analysis, brain networks, or interpretable machine learning.' },
+  { level: 'Undergraduate', body: 'Project and internship roles for curious students across engineering and brain health.' },
+];
+
+// Teaching — placeholder entries; replace with real courses (code, term).
+export const TEACHING = [
+  { code: '[COURSE CODE]', title: 'Biomedical Signal Processing', term: '[Term / Year]', note: 'Time-frequency analysis, filtering, and feature extraction for physiological signals.' },
+  { code: '[COURSE CODE]', title: 'Machine Learning for Neural Data', term: '[Term / Year]', note: 'Statistical learning and deep learning applied to EEG/MEG/SEEG.' },
+];
