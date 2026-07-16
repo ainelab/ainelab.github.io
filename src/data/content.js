@@ -161,8 +161,8 @@ export const OPENINGS = [
   { level: 'Undergraduate', body: 'Project and internship roles for curious students across engineering and brain health.' },
 ];
 
-// Teaching — placeholder entries; replace with real courses (code, term).
+// Teaching at IIT Indore.
 export const TEACHING = [
-  { code: '[COURSE CODE]', title: 'Biomedical Signal Processing', term: '[Term / Year]', note: 'Time-frequency analysis, filtering, and feature extraction for physiological signals.' },
-  { code: '[COURSE CODE]', title: 'Machine Learning for Neural Data', term: '[Term / Year]', note: 'Statistical learning and deep learning applied to EEG/MEG/SEEG.' },
+  { code: 'BSE 637', title: 'Bioelectronics and Biomedical Sensors', term: 'Fall 2026', credits: '2-1-0 (3)', note: 'Principles of bioelectronics and sensing for physiological measurement.' },
+  { code: 'BSE 644 / 444', title: 'Biomedical Signal and Image Processing', term: 'Fall 2026', credits: '', note: 'Signal and image processing methods for biomedical data. Co-taught with other faculty.' },
 ];
