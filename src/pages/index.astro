@@ -1,0 +1,235 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { RESEARCH, METHODS, PROJECTS, PUBLICATIONS, STATS } from '../data/content.js';
+
+const nav = [
+  ['Research', '#research'],
+  ['Projects', '#projects'],
+  ['Publications', '#publications'],
+  ['Join', '#join'],
+];
+---
+<Layout>
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50 border-b border-line/60 bg-ink/70 backdrop-blur-md">
+    <nav class="mx-auto max-w-6xl px-5 h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2.5 group">
+        <span class="grid place-items-center w-9 h-9 rounded-lg bg-gradient-to-br from-brand to-brand-2 text-ink font-extrabold text-sm">NE</span>
+        <span class="leading-tight">
+          <b class="block text-[15px] tracking-tight">AI-NE Lab</b>
+          <span class="block text-[11px] text-muted">AI &amp; Neural Engineering</span>
+        </span>
+      </a>
+      <div class="hidden md:flex items-center gap-1">
+        {nav.map(([label, href]) => (
+          <a href={href} class="px-3 py-2 text-sm font-medium text-muted hover:text-white rounded-lg hover:bg-white/5 transition">{label}</a>
+        ))}
+        <a href="#join" class="ml-2 px-4 py-2 text-sm font-semibold rounded-lg bg-brand text-ink hover:bg-brand-2 transition">Join us</a>
+      </div>
+      <button id="navToggle" aria-label="Menu" class="md:hidden grid place-items-center w-10 h-10 rounded-lg border border-line text-white">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-line/60 bg-ink/95 px-5 py-3">
+      {nav.map(([label, href]) => (
+        <a href={href} class="block py-2.5 text-[15px] text-muted hover:text-white">{label}</a>
+      ))}
+      <a href="#join" class="mt-2 block text-center py-2.5 rounded-lg bg-brand text-ink font-semibold">Join us</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-[100svh] flex flex-col justify-center overflow-hidden">
+    <canvas id="connectome" class="absolute inset-0 w-full h-full"></canvas>
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/45 to-ink pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/60 md:via-ink/25 to-transparent pointer-events-none"></div>
+
+    <div class="relative z-10 mx-auto max-w-6xl px-5 w-full pt-32 pb-24 sm:pt-28 sm:pb-16">
+      <p class="mono text-xs sm:text-sm tracking-[0.2em] uppercase text-brand mb-5">IIT Indore · Mehta Family School of BSBE</p>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] max-w-4xl">
+        <span class="glow-text">Advancing brain health</span><br />
+        through neural signals &amp; AI
+      </h1>
+      <p class="mt-6 text-base sm:text-lg text-muted max-w-2xl leading-relaxed">
+        The AI &amp; Neural Engineering Laboratory builds computational, data-driven, and neuroengineering
+        approaches to understand the human brain in health and neurological disease — across EEG, MEG, and SEEG.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#research" class="px-5 py-3 rounded-xl bg-brand text-ink font-semibold hover:bg-brand-2 transition">Explore research →</a>
+        <a href="#join" class="px-5 py-3 rounded-xl border border-line text-white font-semibold hover:border-brand hover:bg-white/5 transition">Join the lab</a>
+      </div>
+
+      <dl class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-line/70 bg-line/40 max-w-3xl">
+        {STATS.map(([n, label, sub]) => (
+          <div class="bg-panel/80 backdrop-blur px-4 py-5">
+            <dd class="text-2xl sm:text-3xl font-extrabold text-white mono">{n}</dd>
+            <dt class="mt-1 text-xs font-semibold text-brand uppercase tracking-wide">{label}</dt>
+            <dd class="text-[11px] text-muted mt-0.5">{sub}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+    <div class="absolute bottom-5 left-1/2 -translate-x-1/2 text-muted/60 text-xs mono animate-pulse">scroll ↓</div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research" class="relative gridlines border-t border-line/50">
+    <div class="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <div class="reveal max-w-2xl">
+        <p class="mono text-xs tracking-[0.2em] uppercase text-brand-2 mb-3">Research areas</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">The brain is a dynamic network</h2>
+        <p class="mt-4 text-muted leading-relaxed">Five connected themes spanning neural signals, clinical neurotechnology, neurodegeneration, artificial intelligence, and behaviour — turning complex neural data into interpretable markers of brain function.</p>
+      </div>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {RESEARCH.map((r, i) => (
+          <article class={`reveal card-hover rounded-2xl border border-line bg-panel/60 p-6 ${i === 0 ? 'lg:col-span-2' : ''}`}>
+            <span class="mono text-[11px] px-2 py-1 rounded-md bg-brand/10 text-brand border border-brand/20">{r.tag}</span>
+            <h3 class="mt-4 text-xl font-bold">{r.title}</h3>
+            <p class="mt-2 text-sm text-muted leading-relaxed">{r.body}</p>
+          </article>
+        ))}
+      </div>
+
+      <div class="reveal mt-12 rounded-2xl border border-line bg-panel-2/50 p-6 sm:p-8">
+        <p class="mono text-xs tracking-[0.2em] uppercase text-brand-2 mb-4">Methods &amp; approaches</p>
+        <ul class="flex flex-wrap gap-2.5">
+          {METHODS.map((m) => (
+            <li class="text-sm font-medium px-3.5 py-1.5 rounded-full border border-line bg-ink/50 text-slate-200">{m}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="relative border-t border-line/50 bg-panel/30">
+    <div class="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <div class="reveal max-w-2xl">
+        <p class="mono text-xs tracking-[0.2em] uppercase text-brand-2 mb-3">Open projects</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Work on meaningful questions</h2>
+        <p class="mt-4 text-muted leading-relaxed">Projects for PhD, M.Tech, and undergraduate researchers at the intersection of engineering and brain health.</p>
+      </div>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2">
+        {PROJECTS.map((p) => (
+          <article class="reveal card-hover rounded-2xl border border-line bg-ink/40 p-6 flex flex-col">
+            <div class="flex items-center justify-between gap-3">
+              <h3 class="text-lg font-bold">{p.title}</h3>
+              <span class="mono text-[11px] whitespace-nowrap px-2 py-1 rounded-md bg-accent/10 text-accent border border-accent/20">{p.level}</span>
+            </div>
+            <p class="mt-2 text-sm text-muted leading-relaxed grow">{p.body}</p>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              {p.skills.map((s) => (<li class="mono text-[11px] px-2 py-1 rounded bg-white/5 text-slate-300">{s}</li>))}
+            </ul>
+          </article>
+        ))}
+        <a href="#join" class="reveal card-hover rounded-2xl border border-dashed border-brand/40 bg-brand/5 p-6 flex flex-col justify-center items-start">
+          <h3 class="text-lg font-bold text-brand">Have your own idea?</h3>
+          <p class="mt-2 text-sm text-muted">We welcome curious students across disciplines. Pitch a direction that excites you.</p>
+          <span class="mt-4 text-sm font-semibold text-brand">Get in touch →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications" class="relative border-t border-line/50">
+    <div class="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <div class="reveal flex flex-wrap items-end justify-between gap-4">
+        <div class="max-w-2xl">
+          <p class="mono text-xs tracking-[0.2em] uppercase text-brand-2 mb-3">Publications</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Selected recent work</h2>
+        </div>
+        <a href="https://scholar.google.com/citations?user=rlqKrlwAAAAJ" target="_blank" rel="noopener" class="text-sm font-semibold text-brand hover:text-brand-2">All on Google Scholar →</a>
+      </div>
+
+      <ol class="mt-10 divide-y divide-line/60">
+        {PUBLICATIONS.map((p) => (
+          <li class="reveal py-5 grid sm:grid-cols-[5rem_1fr] gap-1 sm:gap-6 group">
+            <div class="mono text-sm text-brand pt-0.5">{p.year}</div>
+            <div>
+              <p class="mono text-[11px] uppercase tracking-wide text-brand-2">{p.venue}</p>
+              {p.link
+                ? <a href={p.link} target="_blank" rel="noopener" class="mt-1 block font-semibold leading-snug group-hover:text-brand transition">{p.title}</a>
+                : <p class="mt-1 font-semibold leading-snug">{p.title}</p>}
+              <p class="mt-1 text-sm text-muted">{p.authors}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section id="join" class="relative border-t border-line/50 bg-panel/30">
+    <div class="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <div class="reveal rounded-3xl border border-line bg-gradient-to-br from-panel-2 to-ink p-8 sm:p-12 overflow-hidden relative">
+        <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-brand/10 blur-3xl pointer-events-none"></div>
+        <div class="relative max-w-2xl">
+          <p class="mono text-xs tracking-[0.2em] uppercase text-brand-2 mb-3">Join AI-NE Lab</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Curious about the brain?</h2>
+          <p class="mt-4 text-muted leading-relaxed">We welcome motivated undergraduate, M.Tech, and PhD students interested in neuroscience, biomedical engineering, AI, mathematics, signal processing, and healthcare technology. Send your CV, transcript, and a brief note on your interests.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="mailto:ainelab@outlook.com?subject=Interest%20in%20joining%20AI-NE%20Lab" class="px-5 py-3 rounded-xl bg-brand text-ink font-semibold hover:bg-brand-2 transition">ainelab@outlook.com</a>
+            <a href="https://scholar.google.com/citations?user=rlqKrlwAAAAJ" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-line text-white font-semibold hover:border-brand hover:bg-white/5 transition">PI · Google Scholar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-line/50">
+    <div class="mx-auto max-w-6xl px-5 py-12 grid gap-8 sm:grid-cols-3">
+      <div>
+        <div class="flex items-center gap-2.5">
+          <span class="grid place-items-center w-9 h-9 rounded-lg bg-gradient-to-br from-brand to-brand-2 text-ink font-extrabold text-sm">NE</span>
+          <b>AI-NE Lab</b>
+        </div>
+        <p class="mt-3 text-sm text-muted max-w-xs">Advancing brain health through neural signals and artificial intelligence.</p>
+      </div>
+      <div class="text-sm">
+        <h4 class="font-semibold text-white mb-3">Explore</h4>
+        <ul class="space-y-2 text-muted">
+          {nav.map(([label, href]) => (<li><a href={href} class="hover:text-brand">{label}</a></li>))}
+        </ul>
+      </div>
+      <div class="text-sm">
+        <h4 class="font-semibold text-white mb-3">Contact</h4>
+        <ul class="space-y-2 text-muted">
+          <li><a href="mailto:ainelab@outlook.com" class="hover:text-brand">ainelab@outlook.com</a></li>
+          <li>Mehta Family School of BSBE</li>
+          <li>IIT Indore, Madhya Pradesh, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-line/50">
+      <div class="mx-auto max-w-6xl px-5 py-5 flex flex-wrap justify-between gap-2 text-xs text-muted">
+        <span>© <span id="year">2026</span> AI-NE Lab, IIT Indore.</span>
+        <span class="mono">Connectome · AAL atlas (MNI space) · Three.js</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    import { initConnectome } from '../scripts/connectome.js';
+    const canvas = document.getElementById('connectome');
+    if (canvas) initConnectome(canvas);
+
+    // mobile menu
+    const t = document.getElementById('navToggle');
+    const m = document.getElementById('mobileMenu');
+    t?.addEventListener('click', () => m?.classList.toggle('hidden'));
+    m?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => m.classList.add('hidden')));
+
+    // scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+    const y = document.getElementById('year');
+    if (y) y.textContent = String(new Date().getFullYear());
+  </script>
+</Layout>

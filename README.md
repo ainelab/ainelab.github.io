@@ -1,47 +1,50 @@
 # AI-NE Lab website
 
-Static website for the **AI and Neural Engineering Laboratory (AI-NE Lab)**, Mehta Family School of Biosciences and Biomedical Engineering, IIT Indore.
+Website for the **AI and Neural Engineering Laboratory (AI-NE Lab)**, Mehta Family
+School of Biosciences and Biomedical Engineering, IIT Indore.
 
-Hosted with GitHub Pages at **https://ainelab.github.io**.
+Built with **Astro + Tailwind CSS v4**, with an animated brain **connectome** in the
+hero rendered in **Three.js** from real MNI-space atlas coordinates (AAL-derived).
+
+Live at **https://ainelab.github.io** (deployed via GitHub Actions).
+
+## Develop
+
+```bash
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # static output → dist/
+npm run preview
+```
 
 ## Structure
 
 ```
-index.html          Home
-research.html       Research areas, methods & approaches
-team.html           People (edit placeholders)
-publications.html   Publications (edit placeholders)
-join.html           Opportunities for students
-contact.html        Contact details & map
-css/style.css       All styles
-js/main.js          Nav toggle, scroll reveal, footer year
-.nojekyll           Serve files as-is (skip Jekyll processing)
+src/pages/index.astro     Single-page site: hero · research · projects · publications · join
+src/layouts/Layout.astro  HTML shell, fonts, meta
+src/components …          (inline in index.astro)
+src/scripts/connectome.js Three.js connectome (nodes, edges, travelling signals)
+src/data/atlas.js         Region centroids in MNI space (AAL-derived)
+src/data/content.js       Research areas, projects, publications, stats — edit here
+src/styles/global.css     Tailwind + theme tokens
+.github/workflows/deploy.yml  Build + deploy to GitHub Pages
 ```
 
-## Editing
+## Edit content
 
-- **Content**: plain HTML — open a page and edit the text between tags.
-- **Colors/spacing**: change the CSS variables at the top of `css/style.css` (`--brand`, `--brand-2`, etc.).
-- **Team / Publications**: duplicate a card / list item and fill in real data. Replace `[bracketed]` placeholders.
-- **Logo**: the "NE" mark is CSS-only. To use an image, replace the `.mark` span in each page header.
+All copy lives in `src/data/content.js` — research areas, open projects, publications,
+and the hero stat tiles. The connectome layout comes from `src/data/atlas.js`.
 
-## Deploy (GitHub Pages)
+## Deploy
 
-This is a user/organization site, so it must live in a repo named `ainelab.github.io`.
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the Astro site
+and publishes it to GitHub Pages.
 
-```bash
-git remote add origin https://github.com/ainelab/ainelab.github.io.git
-git add -A
-git commit -m "Publish AI-NE Lab website"
-git push -u origin main
-```
+**One-time setup:** in the repo, go to **Settings → Pages → Build and deployment →
+Source → GitHub Actions**.
 
-Then in the repo: **Settings → Pages → Source: Deploy from a branch → main / root**.
-Site goes live at https://ainelab.github.io (allow a few minutes on first deploy).
+## Accessibility / performance notes
 
-## Local preview
-
-```bash
-python3 -m http.server 8000
-# open http://localhost:8000
-```
+- Honors `prefers-reduced-motion` (connectome and reveals freeze).
+- Connectome pauses when the tab is hidden.
+- Fully responsive; verified at 390 px and 1440 px.

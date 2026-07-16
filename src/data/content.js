@@ -1,0 +1,125 @@
+export const RESEARCH = [
+  {
+    tag: 'Signals',
+    title: 'Neural signals & brain networks',
+    body: 'Temporal, spectral, and spatial structure of EEG, MEG, and SEEG activity — with a focus on functional and effective connectivity: how distributed regions interact to support cognition, emotion, behaviour, and health.',
+  },
+  {
+    tag: 'Clinical',
+    title: 'Epilepsy & clinical neurotechnology',
+    body: 'Non-invasive and invasive recordings (EEG, SEEG) to identify clinically meaningful biomarkers, characterise seizure-related network dynamics, and build data-driven tools for seizure localisation and monitoring.',
+  },
+  {
+    tag: 'MEG',
+    title: 'MEG & neurodegenerative disorders',
+    body: "Magnetoencephalography to probe brain dynamics in health and disease, including Parkinson's — studying oscillations, connectivity, and network-level alterations as interpretable markers of brain health.",
+  },
+  {
+    tag: 'AI',
+    title: 'AI for neuroscience & healthcare',
+    body: 'Machine-learning and AI methods for biomedical and neural data — prioritising interpretable models that reveal physiological and clinical patterns, integrated with signal processing and network neuroscience.',
+  },
+  {
+    tag: 'Behaviour',
+    title: 'Emotion, cognition & behaviour',
+    body: 'Neural mechanisms of emotion, impulsivity, cognition, and brain–behaviour relationships — how dynamic interactions within and between brain networks relate to individual differences and affective states.',
+  },
+];
+
+export const METHODS = [
+  'Neural signal processing', 'EEG · MEG · SEEG analysis', 'Brain connectivity & network neuroscience',
+  'Machine learning & AI', 'Statistical learning & time-series', 'Dynamical systems & modelling',
+  'Spectral Graph Models', 'Graph-based Ornstein–Uhlenbeck models', 'Clinical & translational neuroscience',
+];
+
+export const PROJECTS = [
+  {
+    level: 'PhD / M.Tech',
+    title: 'Seizure-onset localisation from SEEG',
+    body: 'Envelope-based changepoint analysis and network dynamics to segment seizures and localise onset zones from intracranial recordings.',
+    skills: ['SEEG', 'Changepoint', 'Networks'],
+  },
+  {
+    level: 'PhD',
+    title: 'Contrastive learning of ictal patterns',
+    body: 'Self-supervised representations of stereo-EEG to discover ictal onset patterns without hand-labelled data.',
+    skills: ['Self-supervised', 'Deep learning', 'SEEG'],
+  },
+  {
+    level: 'PhD / M.Tech',
+    title: 'MEG network markers in Parkinson’s',
+    body: 'Network-control and connectivity metrics from MEG to distinguish clinical states and track disease-related change.',
+    skills: ['MEG', 'Connectivity', 'Control theory'],
+  },
+  {
+    level: 'M.Tech / UG',
+    title: 'Interpretable EEG emotion models',
+    body: 'Explainable ML on bispectral and superlet-transform features for subject-independent emotion recognition.',
+    skills: ['EEG', 'Explainable AI', 'Time-frequency'],
+  },
+  {
+    level: 'UG',
+    title: 'Brain-network modelling toolkit',
+    body: 'Spectral graph and graph-OU models linking structural connectomes to measured neural dynamics.',
+    skills: ['Graph models', 'Python', 'Simulation'],
+  },
+];
+
+// Selected recent publications (full list on Google Scholar).
+export const PUBLICATIONS = [
+  {
+    year: 2026, venue: 'Biomedical Physics & Engineering Express',
+    title: 'Subject-independent emotion recognition with EEG bispectral quadratic phase coupling features and explainable machine learning',
+    authors: 'Kumar H, Ganapathy N, Puthankattil SD, Swaminathan R',
+    link: 'https://iopscience.iop.org/article/10.1088/2057-1976/ae711a',
+  },
+  {
+    year: 2026, venue: 'Annals of Biomedical Engineering',
+    title: 'Three-Phase Seizure Segmentation in Stereotactic EEG Using Envelope-Based Multivariate Changepoint Analysis',
+    authors: 'Kumar H, Seshadri NPG, Martinez D, Najm I, Alexopoulos A, Bulacio JC, Serletis D, Krishnan B',
+    link: 'https://doi.org/10.1007/s10439-026-04097-7',
+  },
+  {
+    year: 2026, venue: 'Biomedical Signal Processing and Control',
+    title: 'EEG-based emotion recognition using super-resolution superlet transform and self-attention convolutional neural network',
+    authors: 'Kumar H, Govindarajan S, Ramakrishnan MS, Karthick PA, Ganapathy N',
+    link: 'https://www.sciencedirect.com/science/article/pii/S1746809426009043',
+  },
+  {
+    year: 2026, venue: 'Epilepsia',
+    title: 'Presurgical MEG-derived network control metrics distinguish successful hippocampal resection vs sparing in temporal lobe epilepsy',
+    authors: 'Seshadri NPG, Kumar H, John NS, Alexopoulos AV, Burgess RC, Murakami H, et al.',
+    link: '',
+  },
+  {
+    year: 2025, venue: 'IEEE Sensors Letters',
+    title: 'Analysis of Dynamics of EEG Signals in Emotional Valence Using Super-Resolution Superlet Transform',
+    authors: 'Kumar H, Ganapathy N, Swaminathan R',
+    link: 'https://doi.org/10.1109/LSENS.2025.3526907',
+  },
+  {
+    year: 2024, venue: 'Human Brain Mapping',
+    title: 'Functional Brain Networks of Trait Impulsivity: A Connectome-Based Predictive Modeling Analysis',
+    authors: 'Hüpen P, Kumar H, Swaminathan R, Habel U, Wagels L',
+    link: 'https://doi.org/10.1002/hbm.70059',
+  },
+  {
+    year: 2024, venue: 'IEEE Access',
+    title: 'Exploring Central-Peripheral Nervous System Interaction Through Multimodal Biosignals: A Systematic Review',
+    authors: 'Banik S, Kumar H, Ganapathy N, Swaminathan R',
+    link: 'https://doi.org/10.1109/ACCESS.2024.3392069',
+  },
+  {
+    year: 2023, venue: 'International Journal of Neural Systems',
+    title: 'Impulsivity Classification Using EEG Power and Explainable Machine Learning',
+    authors: 'Hüpen P, Kumar H*, Shymanskaya A, Swaminathan R, Habel U',
+    link: 'https://doi.org/10.1142/S0129065723500065',
+  },
+];
+
+export const STATS = [
+  ['3', 'recording modalities', 'EEG · MEG · SEEG'],
+  ['5', 'research areas', 'signals to behaviour'],
+  ['20+', 'publications', 'journals & conferences'],
+  ['∞', 'brain networks', 'dynamic & interpretable'],
+];
