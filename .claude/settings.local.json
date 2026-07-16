@@ -45,7 +45,12 @@
       "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Use PI email and office address in contact *)",
       "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Remove hero stat tiles *)",
       "WebFetch(domain:ayushayt.github.io)",
-      "Bash(rm -f team.jpeg news.jpeg mobile-carousel*.jpeg)"
+      "Bash(rm -f team.jpeg news.jpeg mobile-carousel*.jpeg)",
+      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Add highlights carousel, team, teaching, and news sections *)",
+      "Bash(cp \"/Users/himanshukumar/Documents/B8745022-3D1B-4246-A8C3-6B78F5EA88C4_1_201_a.jpeg\" public/himanshu-kumar.jpg)",
+      "Bash(file public/*)",
+      "Bash(rm -f team2.jpeg team3.jpeg)",
+      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Add PI photo and IIT Indore logo *)"
     ]
   }
 }
