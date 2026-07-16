@@ -38,7 +38,11 @@
       "Bash(rm -f *-hero*.jpeg *-hero*.png desktop-research.jpeg desktop-pubs.jpeg mobile-top*.jpeg mobile-top*.png)",
       "Bash(rm -rf .playwright-mcp)",
       "Bash(printf \"\\\\n# local screenshot artifacts\\\\n.playwright-mcp/\\\\n*.jpeg\\\\n\")",
-      "Bash(git -c 'user.name=AI-NE Lab' -c user.email=ainelab@outlook.com commit -q -m 'Rebuild site in Astro + Tailwind with Three.js connectome hero *)"
+      "Bash(git -c 'user.name=AI-NE Lab' -c user.email=ainelab@outlook.com commit -q -m 'Rebuild site in Astro + Tailwind with Three.js connectome hero *)",
+      "Bash(pkill -f \"astro dev\")",
+      "Bash(lsof -ti:4321)",
+      "Bash(xargs kill)",
+      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Use PI email and office address in contact *)"
     ]
   }
 }
