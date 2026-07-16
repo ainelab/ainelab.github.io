@@ -54,7 +54,8 @@
       "Bash(rm -f logo-nav.jpeg)",
       "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Add connectome logo mark and favicon *)",
       "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Dial back recruitment emphasis *)",
-      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Add real Fall 2026 courses *)"
+      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Add real Fall 2026 courses *)",
+      "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Both courses 2-1-0 \\(3\\) and co-taught *)"
     ]
   }
 }

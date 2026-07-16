@@ -163,6 +163,6 @@ export const OPENINGS = [
 
 // Teaching at IIT Indore.
 export const TEACHING = [
-  { code: 'BSE 637', title: 'Bioelectronics and Biomedical Sensors', term: 'Fall 2026', credits: '2-1-0 (3)', note: 'Principles of bioelectronics and sensing for physiological measurement.' },
-  { code: 'BSE 644 / 444', title: 'Biomedical Signal and Image Processing', term: 'Fall 2026', credits: '', note: 'Signal and image processing methods for biomedical data. Co-taught with other faculty.' },
+  { code: 'BSE 637', title: 'Bioelectronics and Biomedical Sensors', term: 'Fall 2026', credits: '2-1-0 (3)', note: 'Principles of bioelectronics and sensing for physiological measurement. Co-taught with other faculty.' },
+  { code: 'BSE 644 / 444', title: 'Biomedical Signal and Image Processing', term: 'Fall 2026', credits: '2-1-0 (3)', note: 'Signal and image processing methods for biomedical data. Co-taught with other faculty.' },
 ];
