@@ -130,12 +130,12 @@ export const NEWS = [
   { date: 'Apr 2026', tag: 'Publication', text: 'Work on envelope-based changepoint segmentation of seizures in stereotactic EEG published in Annals of Biomedical Engineering.' },
   { date: 'Apr 2026', tag: 'Publication', text: 'EEG emotion recognition with super-resolution superlet transform and self-attention CNN published in Biomedical Signal Processing and Control.' },
   { date: '2026', tag: 'Preprint', text: 'MEG-derived network control metrics for temporal lobe epilepsy accepted at Epilepsia.' },
-  { date: '2026', tag: 'Lab', text: 'AI-NE Lab established at IIT Indore — now recruiting PhD, M.Tech, and undergraduate researchers.' },
+  { date: '2026', tag: 'Lab', text: 'AI-NE Lab established at IIT Indore within the Mehta Family School of Biosciences & Biomedical Engineering.' },
 ];
 
 // Highlights carousel — text-based achievement cards (no photos needed). Edit freely.
 export const HIGHLIGHTS = [
-  { kicker: 'Now recruiting', title: 'Join a brand-new lab', body: 'PhD, M.Tech, and UG positions open across EEG, MEG, SEEG, and AI for neuroscience.' },
+  { kicker: 'Multimodal', title: 'EEG, MEG & SEEG', body: 'From non-invasive recordings to intracranial signals — studying brain dynamics across scales.' },
   { kicker: 'Clinical impact', title: 'Seizure localisation from SEEG', body: 'Data-driven segmentation and network dynamics to support epilepsy surgery decisions.' },
   { kicker: 'Interpretable AI', title: 'Explainable models for brain data', body: 'ML that reveals physiological and clinical patterns — not just predictions.' },
   { kicker: 'Collaborations', title: 'From bench to bedside', body: 'Ties to Cleveland Clinic Epilepsy Center and University Hospital RWTH Aachen.' },

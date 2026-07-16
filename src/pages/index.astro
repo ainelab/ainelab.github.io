@@ -26,7 +26,7 @@ const nav = [
         {nav.map(([label, href]) => (
           <a href={href} class="px-3 py-2 text-sm font-medium text-muted hover:text-white rounded-lg hover:bg-white/5 transition">{label}</a>
         ))}
-        <a href="#join" class="ml-2 px-4 py-2 text-sm font-semibold rounded-lg bg-brand text-ink hover:bg-brand-2 transition">Join us</a>
+        <a href="#join" class="px-3 py-2 text-sm font-medium text-muted hover:text-white rounded-lg hover:bg-white/5 transition">Join</a>
       </div>
       <button id="navToggle" aria-label="Menu" class="md:hidden grid place-items-center w-10 h-10 rounded-lg border border-line text-white">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -36,7 +36,7 @@ const nav = [
       {nav.map(([label, href]) => (
         <a href={href} class="block py-2.5 text-[15px] text-muted hover:text-white">{label}</a>
       ))}
-      <a href="#join" class="mt-2 block text-center py-2.5 rounded-lg bg-brand text-ink font-semibold">Join us</a>
+      <a href="#join" class="block py-2.5 text-[15px] text-muted hover:text-white">Join</a>
     </div>
   </header>
 
@@ -58,7 +58,7 @@ const nav = [
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a href="#research" class="px-5 py-3 rounded-xl bg-brand text-ink font-semibold hover:bg-brand-2 transition">Explore research →</a>
-        <a href="#join" class="px-5 py-3 rounded-xl border border-line text-white font-semibold hover:border-brand hover:bg-white/5 transition">Join the lab</a>
+        <a href="#publications" class="px-5 py-3 rounded-xl border border-line text-white font-semibold hover:border-brand hover:bg-white/5 transition">Read our work</a>
       </div>
     </div>
     <div class="absolute bottom-5 left-1/2 -translate-x-1/2 text-muted/60 text-xs mono animate-pulse">scroll ↓</div>
@@ -120,29 +120,21 @@ const nav = [
   <section id="projects" class="relative border-t border-line/50 bg-panel/30">
     <div class="mx-auto max-w-6xl px-5 py-20 sm:py-28">
       <div class="reveal max-w-2xl">
-        <p class="mono text-xs tracking-[0.2em] uppercase text-brand-2 mb-3">Open projects</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Work on meaningful questions</h2>
-        <p class="mt-4 text-muted leading-relaxed">Projects for PhD, M.Tech, and undergraduate researchers at the intersection of engineering and brain health.</p>
+        <p class="mono text-xs tracking-[0.2em] uppercase text-brand-2 mb-3">Current directions</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">What we're working on</h2>
+        <p class="mt-4 text-muted leading-relaxed">Active research threads at the intersection of neural signals, clinical neuroscience, and machine learning.</p>
       </div>
 
       <div class="mt-12 grid gap-5 sm:grid-cols-2">
         {PROJECTS.map((p) => (
           <article class="reveal card-hover rounded-2xl border border-line bg-ink/40 p-6 flex flex-col">
-            <div class="flex items-center justify-between gap-3">
-              <h3 class="text-lg font-bold">{p.title}</h3>
-              <span class="mono text-[11px] whitespace-nowrap px-2 py-1 rounded-md bg-accent/10 text-accent border border-accent/20">{p.level}</span>
-            </div>
+            <h3 class="text-lg font-bold">{p.title}</h3>
             <p class="mt-2 text-sm text-muted leading-relaxed grow">{p.body}</p>
             <ul class="mt-4 flex flex-wrap gap-2">
               {p.skills.map((s) => (<li class="mono text-[11px] px-2 py-1 rounded bg-white/5 text-slate-300">{s}</li>))}
             </ul>
           </article>
         ))}
-        <a href="#join" class="reveal card-hover rounded-2xl border border-dashed border-brand/40 bg-brand/5 p-6 flex flex-col justify-center items-start">
-          <h3 class="text-lg font-bold text-brand">Have your own idea?</h3>
-          <p class="mt-2 text-sm text-muted">We welcome curious students across disciplines. Pitch a direction that excites you.</p>
-          <span class="mt-4 text-sm font-semibold text-brand">Get in touch →</span>
-        </a>
       </div>
     </div>
   </section>
@@ -172,9 +164,9 @@ const nav = [
           </div>
         </article>
 
-        <div class="reveal rounded-2xl border border-dashed border-brand/40 bg-brand/5 p-6 flex flex-col">
-          <p class="mono text-[11px] uppercase tracking-wide text-brand">Open positions</p>
-          <h3 class="mt-2 text-lg font-bold">Join the team</h3>
+        <div class="reveal rounded-2xl border border-line bg-panel/60 p-6 flex flex-col">
+          <p class="mono text-[11px] uppercase tracking-wide text-brand-2">Students</p>
+          <h3 class="mt-2 text-lg font-bold">A growing group</h3>
           <ul class="mt-4 space-y-3 grow">
             {OPENINGS.map((o) => (
               <li>
@@ -183,7 +175,7 @@ const nav = [
               </li>
             ))}
           </ul>
-          <a href="#join" class="mt-4 text-sm font-semibold text-brand hover:text-brand-2">Apply →</a>
+          <a href="#join" class="mt-4 text-sm text-muted hover:text-brand transition">Interested? See how to join →</a>
         </div>
       </div>
     </div>
