@@ -4,7 +4,10 @@
       "Bash(git init *)",
       "Bash(git add *)",
       "Bash(git -c 'user.name=AI-NE Lab' -c user.email=ainelab@outlook.com commit -qm 'Publish AI-NE Lab website *)",
-      "Bash(git branch *)"
+      "Bash(git branch *)",
+      "WebFetch(domain:spikelab-ccf.github.io)",
+      "WebFetch(domain:himsriv24.github.io)",
+      "WebFetch(domain:scholar.google.com)"
     ]
   }
 }
