@@ -126,11 +126,11 @@ export const STATS = [
 
 // Dated updates — newest first. Seeded from recent publications & lab milestones; edit freely.
 export const NEWS = [
+  { date: 'Jul 2026', tag: 'Lab', text: 'AI-NE Lab established at IIT Indore within the Mehta Family School of Biosciences & Biomedical Engineering.' },
+  { date: 'Jun 2026', tag: 'Publication', text: 'MEG-derived network control metrics for temporal lobe epilepsy accepted at Epilepsia.' },
   { date: 'May 2026', tag: 'Publication', text: 'New paper on subject-independent EEG emotion recognition with bispectral features and explainable ML published in Biomedical Physics & Engineering Express.' },
   { date: 'Apr 2026', tag: 'Publication', text: 'Work on envelope-based changepoint segmentation of seizures in stereotactic EEG published in Annals of Biomedical Engineering.' },
   { date: 'Apr 2026', tag: 'Publication', text: 'EEG emotion recognition with super-resolution superlet transform and self-attention CNN published in Biomedical Signal Processing and Control.' },
-  { date: '2026', tag: 'Preprint', text: 'MEG-derived network control metrics for temporal lobe epilepsy accepted at Epilepsia.' },
-  { date: '2026', tag: 'Lab', text: 'AI-NE Lab established at IIT Indore within the Mehta Family School of Biosciences & Biomedical Engineering.' },
 ];
 
 // Highlights carousel — text-based achievement cards (no photos needed). Edit freely.
