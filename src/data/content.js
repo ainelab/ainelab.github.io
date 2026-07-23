@@ -29,7 +29,7 @@ export const RESEARCH = [
 export const METHODS = [
   'Neural signal processing', 'EEG · MEG · SEEG analysis', 'Brain connectivity & network neuroscience',
   'Machine learning & AI', 'Statistical learning & time-series', 'Dynamical systems & modelling',
-  'Spectral Graph Models', 'Graph-based Ornstein–Uhlenbeck models', 'Clinical & translational neuroscience',
+  'Clinical & translational neuroscience',
 ];
 
 export const PROJECTS = [
