@@ -72,7 +72,8 @@
       "Bash(sips -g pixelWidth -g pixelHeight public/brain-hero.jpg)",
       "Bash(rm -f brain-hero.jpeg brain-mobile.jpeg)",
       "Bash(git -c 'user.name=Himanshu Kumar' -c user.email=himanshu@iiti.ac.in commit -q -m 'Add glowing brain hero image *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(python3 -)"
     ]
   }
 }
