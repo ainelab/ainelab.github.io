@@ -9,11 +9,12 @@ import { RESEARCH, NEWS, PI } from '../data/content.js';
 
   <!-- HERO -->
   <section class="border-b border-line">
-    <div class="relative w-full h-[30vh] sm:h-[38vh] bg-black overflow-hidden">
-      <img src="/brain-hero.jpg" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-40"
-           style="object-position: 42% 50%; filter: sepia(1) saturate(7) hue-rotate(-42deg) brightness(0.55) contrast(1.15)" />
-      <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.55) 100%)"></div>
-      <canvas id="connectome" class="absolute inset-0 w-full h-full mix-blend-screen"></canvas>
+    <div class="relative w-full h-[30vh] sm:h-[38vh] bg-black overflow-hidden flex items-center justify-center">
+      <video autoplay loop muted playsinline aria-hidden="true"
+             class="h-[165%] w-auto max-w-none"
+             style="filter: hue-rotate(120deg) saturate(1.7) brightness(1.02)">
+        <source src="/brain-net.mp4" type="video/mp4" />
+      </video>
     </div>
     <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
       <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-5">IIT Indore &middot; Mehta Family School of BSBE</p>
@@ -96,10 +97,4 @@ import { RESEARCH, NEWS, PI } from '../data/content.js';
   </section>
 
   <Footer />
-
-  <script>
-    import { initConnectome } from '../scripts/connectome.js';
-    const canvas = document.getElementById('connectome');
-    if (canvas) initConnectome(canvas);
-  </script>
 </Layout>
