@@ -130,7 +130,7 @@ export function initConnectome(canvas) {
     // pull back on narrow screens so the graph fits; on wide screens push the
     // graph right so it sits beside the headline rather than behind it
     camera.position.z = w < 640 ? 300 : 240;
-    group.position.x = w < 900 ? 0 : 62;
+    group.position.x = 0;
     camera.updateProjectionMatrix();
   }
   const ro = new ResizeObserver(resize);

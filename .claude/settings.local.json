@@ -115,7 +115,8 @@
       "Bash(cp __TRACKED_VAR__/bispectrum2-09.png '/Users/himanshukumar/Documents/My Lab Website/public/research/bispectrum.png')",
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/himanshukumar/Documents/My Lab Website/public/research/bispectrum.png\")",
       "Bash(rm -f hero-new.png)",
-      "Bash(rm -f connectome-red.png)"
+      "Bash(rm -f connectome-red.png)",
+      "Bash(rm -f brain-overlay.png brain-overlay2.png)"
     ]
   }
 }
