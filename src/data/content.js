@@ -1,18 +1,18 @@
 export const RESEARCH = [
   {
-    tag: 'Emotion',
-    title: 'Affective computing & EEG emotion recognition',
-    body: 'Decoding emotional states (arousal and valence) from EEG using advanced time–frequency analysis — super-resolution superlet transforms and bispectral quadratic phase coupling — combined with machine learning.',
+    tag: 'Epilepsy',
+    title: 'Epilepsy neurotechnology · EEG, MEG & SEEG',
+    body: 'Envelope-based changepoint segmentation of seizures, seizure-network dynamics for localisation, and presurgical MEG-derived network-control metrics for temporal lobe epilepsy — across non-invasive and intracranial (SEEG) recordings.',
   },
   {
     tag: 'Networks',
     title: 'Brain connectivity & functional networks',
-    body: 'Nonlinear phase-based functional connectivity (phase-lag index, phase-locking value) and CNS–PNS phase synchronization from EEG and PPG — mapping how distributed regions coordinate during emotion and behaviour.',
+    body: 'Nonlinear phase-based functional connectivity (phase-lag index, phase-locking value) mapping how distributed brain regions coordinate, together with interaction between the central and autonomic nervous systems through phase synchronization.',
   },
   {
     tag: 'Behaviour',
     title: 'Impulsivity, cognition & behaviour',
-    body: 'Data-driven EEG and whole-brain connectome markers of trait impulsivity — connectome-based predictive modelling linking brain networks to individual differences in behaviour.',
+    body: 'Data-driven whole-brain connectome markers of trait impulsivity — connectome-based predictive modelling linking brain networks to individual differences in behaviour.',
   },
   {
     tag: 'XAI',
@@ -20,14 +20,9 @@ export const RESEARCH = [
     body: 'Explainable models (SHAP, feature-importance) and leakage-aware validation that reveal which physiological patterns drive a prediction — not accuracy alone.',
   },
   {
-    tag: 'Epilepsy',
-    title: 'Epilepsy neurotechnology · EEG, MEG & SEEG',
-    body: 'Envelope-based changepoint segmentation of seizures and network dynamics for seizure localisation, from non-invasive and intracranial recordings.',
-  },
-  {
-    tag: 'MEG',
-    title: 'MEG network control & neurodegeneration',
-    body: "Presurgical MEG-derived network-control metrics for temporal lobe epilepsy, and MEG markers of neurodegeneration including Parkinson's disease.",
+    tag: 'Emotion',
+    title: 'Affective computing & emotion recognition',
+    body: 'Decoding emotional states from neural signals using advanced time–frequency analysis and machine learning.',
   },
 ];
 
