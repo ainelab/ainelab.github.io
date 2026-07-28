@@ -102,7 +102,8 @@
       "Bash(rm -f hero-eeg.png)",
       "Bash(cp \"/Users/himanshukumar/Downloads/Generated image 2.png\" public/hero-ai.png)",
       "Bash(sips -g pixelWidth -g pixelHeight public/hero-ai.png)",
-      "Bash(rm -f hero-ai.png)"
+      "Bash(rm -f hero-ai.png)",
+      "Bash(python3 -c \"import numpy; print\\('numpy ok'\\)\")"
     ]
   }
 }

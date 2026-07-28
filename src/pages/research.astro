@@ -34,9 +34,7 @@ import { RESEARCH } from '../data/content.js';
               <p class="mt-3 text-sm text-muted leading-relaxed">{r.body}</p>
             </div>
             <figure class={i % 2 === 1 ? 'lg:order-1' : ''}>
-              <div class="border border-line bg-white p-3">
-                <img src={r.img} alt={r.credit} loading="lazy" class="w-full h-auto max-h-[360px] object-contain mx-auto" />
-              </div>
+              <img src={r.img} alt={r.credit} loading="lazy" class="w-full h-auto block border border-line" />
               <figcaption class="mt-2 text-[11px] text-muted leading-snug">{r.credit}</figcaption>
             </figure>
           </article>
