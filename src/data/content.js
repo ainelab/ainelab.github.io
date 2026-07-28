@@ -3,26 +3,36 @@ export const RESEARCH = [
     tag: 'Clinical',
     title: 'Clinical & translational neuroscience',
     body: 'Envelope-based changepoint segmentation of seizures, seizure-network dynamics for localisation, and presurgical MEG-derived network-control metrics in temporal lobe epilepsy — across non-invasive and intracranial (EEG, MEG, SEEG) recordings.',
+    img: '/research/seizure-seeg.png',
+    credit: 'Three-phase seizure segmentation from SEEG. Annals of Biomedical Engineering (2026).',
   },
   {
     tag: 'Networks',
     title: 'Brain connectivity & functional networks',
     body: 'Nonlinear phase-based functional connectivity (phase-lag index, phase-locking value) mapping how distributed brain regions coordinate, together with interaction between the central and autonomic nervous systems through phase synchronization.',
+    img: '/research/connectome.png',
+    credit: 'Whole-brain functional connectivity network. Human Brain Mapping (2024).',
   },
   {
     tag: 'Behaviour',
     title: 'Impulsivity, cognition & behaviour',
     body: 'Data-driven whole-brain connectome markers of trait impulsivity — connectome-based predictive modelling linking brain networks to individual differences in behaviour.',
+    img: '/research/topomaps.png',
+    credit: 'EEG topographies across impulsivity levels. Int. J. Neural Systems (2023).',
   },
   {
     tag: 'XAI',
     title: 'Interpretable machine learning for neural data',
     body: 'Explainable models (SHAP, feature-importance) and leakage-aware validation that reveal which physiological patterns drive a prediction — not accuracy alone.',
+    img: '/research/sa-cnn.png',
+    credit: 'Self-attention CNN for EEG emotion recognition. Biomed. Signal Process. Control (2026).',
   },
   {
     tag: 'Emotion',
     title: 'Affective computing & emotion recognition',
     body: 'Decoding emotional states from neural signals using advanced time–frequency analysis and machine learning.',
+    img: '/research/spectrogram.png',
+    credit: 'Super-resolution superlet time–frequency spectra. IEEE Sensors Letters (2025).',
   },
 ];
 

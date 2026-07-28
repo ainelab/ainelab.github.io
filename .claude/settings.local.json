@@ -84,7 +84,19 @@
       "Bash(rm -f p-research.png)",
       "Bash(rm -f p-research2.png)",
       "Read(//Users/himanshukumar/Documents/My Papers/**)",
-      "Bash(rm -f p-research3.png)"
+      "Bash(rm -f p-research3.png)",
+      "Bash(python3 -c \"import PIL; print\\('PIL', PIL.__version__\\)\")",
+      "Bash(python3 -c \"import fitz; print\\('pymupdf', fitz.__doc__[:20]\\)\")",
+      "Bash(pdftoppm -png -r 150 -f 12 -l 12 -x 30 -y 1230 -W 1170 -H 400 impulsivity-classification-using-eeg-power-and-explainable-machine-learning.pdf __TRACKED_VAR__/ijns-try2)",
+      "Bash(sips -g pixelWidth -g pixelHeight __TRACKED_VAR__/ijns-try2-12.png)",
+      "Bash(pdfinfo -f 12 -l 12 \"impulsivity-classification-using-eeg-power-and-explainable-machine-learning.pdf\")",
+      "Bash(pdftoppm -png -r 150 -f 7 -l 7 -x 35 -y 100 -W 1170 -H 340 'Human Brain Mapping - 2024 - H%C3%BCpen - Functional Brain Network of Trait Impulsivity Whole%E2%80%90Brain Functional Connectivity.pdf' __TRACKED_VAR__/hbm-circles2)",
+      "Bash(pdftoppm -png -r 150 -f 10 -l 10 -x 150 -y 95 -W 780 -H 1340 s10439-026-04097-7.pdf __TRACKED_VAR__/annals-fig2)",
+      "Bash(sips -g pixelWidth -g pixelHeight __TRACKED_VAR__/annals-fig2-10.png)",
+      "Bash(pdftoppm -png -r 150 -f 10 -l 10 -x 150 -y 95 -W 940 -H 1345 s10439-026-04097-7.pdf __TRACKED_VAR__/annals-fig2b)",
+      "Bash(sips -g pixelWidth -g pixelHeight __TRACKED_VAR__/annals-fig2b-10.png)",
+      "Bash(rm -f p-research-img.png p-research-img2.png)",
+      "Bash(rm -rf /private/tmp/claude-501/-Users-himanshukumar-Documents-My-Lab-Website/0f17399c-70cf-4bb6-9799-f09c49429b88/scratchpad/crop /private/tmp/claude-501/-Users-himanshukumar-Documents-My-Lab-Website/0f17399c-70cf-4bb6-9799-f09c49429b88/scratchpad/extract)"
     ]
   }
 }
