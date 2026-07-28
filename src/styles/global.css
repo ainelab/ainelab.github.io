@@ -31,6 +31,16 @@ body {
 /* Utility helpers */
 .mono { font-family: var(--font-mono); }
 
+/* Branded duotone hero — shift the blue brain toward the deep-red / ink palette */
+.hero-duotone { position: relative; background: var(--color-ink); }
+.hero-duotone img { filter: grayscale(1) contrast(1.05) brightness(0.95); mix-blend-mode: luminosity; }
+.hero-duotone::after {
+  content: "";
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(135deg, #2a0d12 0%, var(--color-brand) 60%, #b7434f 100%);
+  mix-blend-mode: multiply;
+}
+
 .gridlines { background: none; }
 
 .glow-text { color: var(--color-ink); }
