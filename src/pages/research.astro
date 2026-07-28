@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { RESEARCH, METHODS } from '../data/content.js';
+import { RESEARCH } from '../data/content.js';
 ---
 <Layout title="Research — AI-NE Lab, IIT Indore">
   <Nav />
@@ -36,21 +36,6 @@ import { RESEARCH, METHODS } from '../data/content.js';
           </article>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- METHODS -->
-  <section class="border-b border-line bg-panel-2/60">
-    <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
-      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-2">Methods &amp; approaches</p>
-      <h2 class="font-serif text-2xl font-semibold text-ink">How we work</h2>
-      <ul class="mt-6 grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3 max-w-3xl">
-        {METHODS.map((m) => (
-          <li class="text-sm text-muted flex gap-2.5 items-baseline border-b border-line pb-1.5">
-            <span class="text-brand">—</span>{m}
-          </li>
-        ))}
-      </ul>
     </div>
   </section>
 
