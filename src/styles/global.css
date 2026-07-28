@@ -27,7 +27,7 @@
   --color-brand-2: #8fa0b6;
   --color-accent: #e0576a;
   --color-muted: #97a1b2;
-  --color-paper: #08090c;
+  --color-paper: #000000;
   background: var(--color-paper);
   color: var(--color-ink);
   color-scheme: dark;
