@@ -1,28 +1,33 @@
 export const RESEARCH = [
   {
-    tag: 'Signals',
-    title: 'Neural signals & brain networks',
-    body: 'Temporal, spectral, and spatial structure of EEG, MEG, and SEEG activity — with a focus on functional and effective connectivity: how distributed regions interact to support cognition, emotion, behaviour, and health.',
+    tag: 'Emotion',
+    title: 'Affective computing & EEG emotion recognition',
+    body: 'Decoding emotional states (arousal and valence) from EEG using advanced time–frequency analysis — super-resolution superlet transforms and bispectral quadratic phase coupling — combined with machine learning.',
   },
   {
-    tag: 'Clinical',
-    title: 'Epilepsy & clinical neurotechnology',
-    body: 'Non-invasive and invasive recordings (EEG, MEG, SEEG) to identify clinically meaningful biomarkers, characterise seizure-related network dynamics, and build data-driven tools for seizure localisation and monitoring.',
-  },
-  {
-    tag: 'MEG',
-    title: 'MEG & neurodegenerative disorders',
-    body: "Magnetoencephalography to probe brain dynamics in health and disease, including Parkinson's — studying oscillations, connectivity, and network-level alterations as interpretable markers of brain health.",
-  },
-  {
-    tag: 'AI',
-    title: 'AI for neuroscience & healthcare',
-    body: 'Machine-learning and AI methods for biomedical and neural data — prioritising interpretable models that reveal physiological and clinical patterns, integrated with signal processing and network neuroscience.',
+    tag: 'Networks',
+    title: 'Brain connectivity & functional networks',
+    body: 'Nonlinear phase-based functional connectivity (phase-lag index, phase-locking value) and CNS–PNS phase synchronization from EEG and PPG — mapping how distributed regions coordinate during emotion and behaviour.',
   },
   {
     tag: 'Behaviour',
-    title: 'Emotion, cognition & behaviour',
-    body: 'Neural mechanisms of emotion, impulsivity, cognition, and brain–behaviour relationships — how dynamic interactions within and between brain networks relate to individual differences and affective states.',
+    title: 'Impulsivity, cognition & behaviour',
+    body: 'Data-driven EEG and whole-brain connectome markers of trait impulsivity — connectome-based predictive modelling linking brain networks to individual differences in behaviour.',
+  },
+  {
+    tag: 'XAI',
+    title: 'Interpretable machine learning for neural data',
+    body: 'Explainable models (SHAP, feature-importance) and leakage-aware validation that reveal which physiological patterns drive a prediction — not accuracy alone.',
+  },
+  {
+    tag: 'Epilepsy',
+    title: 'Epilepsy neurotechnology · EEG, MEG & SEEG',
+    body: 'Envelope-based changepoint segmentation of seizures and network dynamics for seizure localisation, from non-invasive and intracranial recordings.',
+  },
+  {
+    tag: 'MEG',
+    title: 'MEG network control & neurodegeneration',
+    body: "Presurgical MEG-derived network-control metrics for temporal lobe epilepsy, and MEG markers of neurodegeneration including Parkinson's disease.",
   },
 ];
 
