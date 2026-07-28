@@ -55,14 +55,6 @@ const approaches = ['Signals', 'AI'].map(byTag).filter(Boolean);
       <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-1">How we study it</p>
       <h2 class="font-serif text-2xl font-semibold text-ink">Tools &amp; approaches</h2>
 
-      <!-- modalities -->
-      <div class="mt-6 flex flex-wrap gap-3">
-        {['EEG', 'MEG', 'SEEG'].map((m) => (
-          <span class="mono text-xs uppercase tracking-wide text-brand border border-line bg-paper px-3 py-1.5">{m}</span>
-        ))}
-        <span class="text-sm text-muted self-center">— the recording modalities we work with.</span>
-      </div>
-
       <!-- approach themes -->
       <div class="mt-6 grid gap-6 sm:grid-cols-2">
         {approaches.map((r) => (
