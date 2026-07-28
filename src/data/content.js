@@ -36,6 +36,14 @@ export const RESEARCH = [
   },
 ];
 
+// Big open questions — curiosity hooks for prospective students. Each ties to a real research area.
+export const QUESTIONS = [
+  { q: 'Can we see a seizure coming — before it happens?', tie: 'Seizure dynamics & localisation from SEEG and MEG.' },
+  { q: 'What does an emotion look like inside a brainwave?', tie: 'Affective computing from EEG time–frequency signatures.' },
+  { q: 'Can an AI read the brain — and explain itself?', tie: 'Interpretable machine learning for neural data.' },
+  { q: 'How does a single thought ripple across the whole brain?', tie: 'Brain connectivity & network neuroscience.' },
+];
+
 export const METHODS = [
   'Neural signal processing', 'EEG · MEG · SEEG analysis', 'Brain connectivity & network neuroscience',
   'Machine learning & AI', 'Statistical learning & time-series', 'Dynamical systems & modelling',
