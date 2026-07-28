@@ -9,8 +9,8 @@ function discTexture() {
   const g = c.getContext('2d');
   const grd = g.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
   grd.addColorStop(0, 'rgba(255,255,255,1)');
-  grd.addColorStop(0.35, 'rgba(180,230,255,0.95)');
-  grd.addColorStop(1, 'rgba(180,230,255,0)');
+  grd.addColorStop(0.35, 'rgba(255,150,165,0.95)');
+  grd.addColorStop(1, 'rgba(255,150,165,0)');
   g.fillStyle = grd;
   g.beginPath();
   g.arc(s / 2, s / 2, s / 2, 0, Math.PI * 2);
@@ -46,8 +46,8 @@ export function initConnectome(canvas) {
   const nodePos = new Float32Array(pts.length * 3);
   const nodeCol = new Float32Array(pts.length * 3);
   const nodeSize = new Float32Array(pts.length);
-  const cBrand = new THREE.Color(0x38bdf8);
-  const cTeal = new THREE.Color(0x2dd4bf);
+  const cBrand = new THREE.Color(0xe0596c);
+  const cTeal = new THREE.Color(0xb7434f);
   pts.forEach((p, i) => {
     nodePos.set([p.x, p.y, p.z], i * 3);
     const c = i % 2 === 0 ? cBrand : cTeal;
@@ -89,7 +89,7 @@ export function initConnectome(canvas) {
   });
   const lineGeo = new THREE.BufferGeometry();
   lineGeo.setAttribute('position', new THREE.BufferAttribute(linePos, 3));
-  const lineMat = new THREE.LineBasicMaterial({ color: 0x58a6e6, transparent: true, opacity: 0.42 });
+  const lineMat = new THREE.LineBasicMaterial({ color: 0xb7434f, transparent: true, opacity: 0.38 });
   const lines = new THREE.LineSegments(lineGeo, lineMat);
   group.add(lines);
 
@@ -107,7 +107,7 @@ export function initConnectome(canvas) {
   const sigPos = new Float32Array(N_SIG * 3);
   sigGeo.setAttribute('position', new THREE.BufferAttribute(sigPos, 3));
   const sigMat = new THREE.PointsMaterial({
-    size: 7, map: discTexture(), color: 0xbdf0ff,
+    size: 7, map: discTexture(), color: 0xffc2cc,
     transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, sizeAttenuation: true,
   });
   const signals = new THREE.Points(sigGeo, sigMat);

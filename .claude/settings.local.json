@@ -114,7 +114,8 @@
       "Bash(pdftoppm -png -r 150 -f 9 -l 9 -x 245 -y 735 -W 950 -H 430 Kumar_2026_Biomed._Phys._Eng._Express_12_035049.pdf __TRACKED_VAR__/bispectrum2)",
       "Bash(cp __TRACKED_VAR__/bispectrum2-09.png '/Users/himanshukumar/Documents/My Lab Website/public/research/bispectrum.png')",
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/himanshukumar/Documents/My Lab Website/public/research/bispectrum.png\")",
-      "Bash(rm -f hero-new.png)"
+      "Bash(rm -f hero-new.png)",
+      "Bash(rm -f connectome-red.png)"
     ]
   }
 }
