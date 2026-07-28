@@ -1,0 +1,44 @@
+---
+import LogoMark from './LogoMark.astro';
+
+const nav = [
+  ['Home', '/'],
+  ['Research', '/research'],
+  ['People', '/people'],
+  ['Publications', '/publications'],
+  ['Teaching', '/teaching'],
+  ['News', '/news'],
+  ['Join', '/join'],
+];
+
+// Normalise current path (strip trailing slash) for active-link matching.
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (href) => (href === '/' ? path === '/' : path === href || path.startsWith(href + '/'));
+---
+<header class="border-b border-line bg-paper">
+  <div class="mx-auto max-w-5xl px-5 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <a href="/" class="flex items-center gap-2.5">
+      <LogoMark size={34} />
+      <span class="leading-tight">
+        <b class="block text-[15px] tracking-tight text-ink">AI-NE Lab</b>
+        <span class="block text-[11px] text-muted">AI &amp; Neural Engineering &middot; IIT Indore</span>
+      </span>
+    </a>
+    <button id="navToggle" aria-label="Menu" class="sm:hidden absolute right-5 top-5 grid place-items-center w-10 h-10 rounded border border-line text-ink">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav id="navLinks" class="hidden sm:flex flex-col sm:flex-row sm:items-center gap-x-5 gap-y-1 text-sm">
+      {nav.map(([label, href]) => (
+        <a
+          href={href}
+          class={`py-1 font-medium transition ${isActive(href) ? 'text-brand border-b-2 border-brand' : 'text-muted hover:text-ink'}`}
+        >{label}</a>
+      ))}
+    </nav>
+  </div>
+</header>
+<script>
+  const t = document.getElementById('navToggle');
+  const n = document.getElementById('navLinks');
+  t?.addEventListener('click', () => n?.classList.toggle('hidden'));
+</script>

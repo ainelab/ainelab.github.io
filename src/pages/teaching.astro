@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { TEACHING } from '../data/content.js';
+---
+<Layout title="Teaching — AI-NE Lab, IIT Indore">
+  <Nav />
+
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-5xl px-5 py-14 sm:py-16">
+      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-3">Teaching</p>
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold tracking-tight text-ink">Courses</h1>
+      <p class="mt-4 text-muted leading-relaxed max-w-2xl">Coursework at IIT Indore bridging signal processing, machine learning, and neural engineering.</p>
+    </div>
+  </section>
+
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-5xl px-5 py-8 sm:py-10 divide-y divide-line">
+      {TEACHING.map((c) => (
+        <article class="py-7 grid sm:grid-cols-[10rem_1fr] gap-2 sm:gap-8">
+          <div>
+            <span class="mono text-[12px] text-brand">{c.code}</span>
+            <p class="mono text-[11px] text-muted mt-0.5">{c.term}</p>
+          </div>
+          <div>
+            <h2 class="font-serif text-lg font-semibold text-ink">{c.title}</h2>
+            {c.credits && <p class="mt-1 mono text-[11px] text-brand-2">L-T-P &middot; {c.credits}</p>}
+            <p class="mt-2 text-sm text-muted leading-relaxed max-w-2xl">{c.note}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

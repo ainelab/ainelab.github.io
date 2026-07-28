@@ -1,0 +1,52 @@
+---
+import LogoMark from './LogoMark.astro';
+
+const nav = [
+  ['Research', '/research'],
+  ['People', '/people'],
+  ['Publications', '/publications'],
+  ['Teaching', '/teaching'],
+  ['News', '/news'],
+  ['Join', '/join'],
+];
+---
+<footer class="border-t border-line mt-4">
+  <div class="mx-auto max-w-5xl px-5 py-12 grid gap-8 sm:grid-cols-3">
+    <div>
+      <div class="flex items-center gap-2.5">
+        <LogoMark size={32} />
+        <b class="text-ink">AI-NE Lab</b>
+      </div>
+      <p class="mt-3 text-sm text-muted max-w-xs">Advancing brain health through neural signals and artificial intelligence.</p>
+      <a href="https://bsbe.iiti.ac.in/" target="_blank" rel="noopener" class="mt-5 flex items-center gap-3">
+        <img src="/iiti-logo.png" alt="Indian Institute of Technology Indore" width="40" height="44" loading="lazy" class="h-10 w-auto" />
+        <span class="text-xs text-muted leading-tight">Indian Institute of<br />Technology Indore</span>
+      </a>
+    </div>
+    <div class="text-sm">
+      <h4 class="font-semibold text-ink mb-3">Explore</h4>
+      <ul class="space-y-2 text-muted">
+        {nav.map(([label, href]) => (<li><a href={href} class="hover:text-brand">{label}</a></li>))}
+      </ul>
+    </div>
+    <div class="text-sm">
+      <h4 class="font-semibold text-ink mb-3">Contact</h4>
+      <ul class="space-y-2 text-muted">
+        <li class="text-ink font-semibold">Dr. Himanshu Kumar</li>
+        <li><a href="mailto:himanshu@iiti.ac.in" class="hover:text-brand">himanshu@iiti.ac.in</a></li>
+        <li class="pt-1">Room No. FC 509, LRC Building</li>
+        <li>IIT Indore, Khandwa Road, Simrol</li>
+        <li>Indore (M.P.) 453552</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-line">
+    <div class="mx-auto max-w-5xl px-5 py-5 text-xs text-muted">
+      © <span id="year">2026</span> AI-NE Lab, IIT Indore.
+    </div>
+  </div>
+</footer>
+<script>
+  const y = document.getElementById('year');
+  if (y) y.textContent = String(new Date().getFullYear());
+</script>

@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { PUBLICATIONS } from '../data/content.js';
+---
+<Layout title="Publications — AI-NE Lab, IIT Indore">
+  <Nav />
+
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-5xl px-5 py-14 sm:py-16 flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-3">Publications</p>
+        <h1 class="font-serif text-3xl sm:text-4xl font-semibold tracking-tight text-ink">Selected recent work</h1>
+      </div>
+      <a href="https://scholar.google.com/citations?user=rlqKrlwAAAAJ" target="_blank" rel="noopener" class="text-sm font-semibold text-brand hover:text-ink transition">All on Google Scholar →</a>
+    </div>
+  </section>
+
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-5xl px-5 py-8 sm:py-10">
+      <ol class="divide-y divide-line">
+        {PUBLICATIONS.map((p) => (
+          <li class="py-5 grid sm:grid-cols-[4.5rem_1fr] gap-1 sm:gap-6 group">
+            <div class="mono text-sm text-brand pt-0.5">{p.year}</div>
+            <div>
+              <p class="mono text-[11px] uppercase tracking-wide text-brand-2">{p.venue}</p>
+              {p.link
+                ? <a href={p.link} target="_blank" rel="noopener" class="mt-1 block font-semibold leading-snug text-ink group-hover:text-brand transition">{p.title}</a>
+                : <p class="mt-1 font-semibold leading-snug text-ink">{p.title}</p>}
+              <p class="mt-1 text-sm text-muted">{p.authors}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
