@@ -2,7 +2,7 @@ export const RESEARCH = [
   {
     tag: 'Clinical',
     title: 'Clinical & translational neuroscience',
-    body: 'Envelope-based changepoint segmentation of seizures, seizure-network dynamics for localisation, and presurgical MEG-derived network-control metrics in temporal lobe epilepsy — across non-invasive and intracranial (EEG, MEG, SEEG) recordings.',
+    body: 'Envelope-based changepoint segmentation of seizures, seizure-network dynamics for localisation, and presurgical MEG-derived network-control metrics in temporal lobe epilepsy, across non-invasive and intracranial (EEG, MEG, SEEG) recordings.',
     img: '/research/seizure-seeg.png',
     credit: 'Three-phase seizure segmentation from SEEG. Annals of Biomedical Engineering (2026).',
   },
@@ -16,14 +16,14 @@ export const RESEARCH = [
   {
     tag: 'Behaviour',
     title: 'Impulsivity, cognition & behaviour',
-    body: 'Data-driven whole-brain connectome markers of trait impulsivity — connectome-based predictive modelling linking brain networks to individual differences in behaviour.',
+    body: 'Data-driven whole-brain connectome markers of trait impulsivity, using connectome-based predictive modelling linking brain networks to individual differences in behaviour.',
     img: '/research/topomaps.png',
     credit: 'EEG topographies across impulsivity levels. Int. J. Neural Systems (2023).',
   },
   {
     tag: 'XAI',
     title: 'Interpretable machine learning for neural data',
-    body: 'Explainable models (SHAP, feature-importance) and leakage-aware validation that reveal which physiological patterns drive a prediction — not accuracy alone.',
+    body: 'Explainable models (SHAP, feature-importance) and leakage-aware validation that reveal which physiological patterns drive a prediction, not accuracy alone.',
     img: '/research/sa-cnn.png',
     credit: 'Self-attention CNN for EEG emotion recognition. Biomed. Signal Process. Control (2026).',
   },
@@ -36,11 +36,11 @@ export const RESEARCH = [
   },
 ];
 
-// Big open questions — curiosity hooks for prospective students. Each ties to a real research area.
+// Big open questions: curiosity hooks for prospective students. Each ties to a real research area.
 export const QUESTIONS = [
-  { q: 'Can we see a seizure coming — before it happens?', tie: 'Seizure dynamics & localisation from SEEG and MEG.' },
+  { q: 'Can we see a seizure coming before it happens?', tie: 'Seizure dynamics & localisation from SEEG and MEG.' },
   { q: 'What does an emotion look like inside a brainwave?', tie: 'Affective computing from EEG time–frequency signatures.' },
-  { q: 'Can an AI read the brain — and explain itself?', tie: 'Interpretable machine learning for neural data.' },
+  { q: 'Can an AI read the brain, and explain itself?', tie: 'Interpretable machine learning for neural data.' },
   { q: 'How does a single thought ripple across the whole brain?', tie: 'Brain connectivity & network neuroscience.' },
 ];
 
@@ -142,7 +142,7 @@ export const STATS = [
   ['∞', 'brain networks', 'dynamic & interpretable'],
 ];
 
-// Dated updates — newest first. Seeded from recent publications & lab milestones; edit freely.
+// Dated updates, newest first. Seeded from recent publications & lab milestones; edit freely.
 export const NEWS = [
   { date: 'Jul 2026', tag: 'Lab', text: 'AI-NE Lab established at IIT Indore within the Mehta Family School of Biosciences & Biomedical Engineering.' },
   { date: 'Jun 2026', tag: 'Publication', text: 'MEG-derived network control metrics for temporal lobe epilepsy accepted at Epilepsia.' },
@@ -151,24 +151,24 @@ export const NEWS = [
   { date: 'Apr 2026', tag: 'Publication', text: 'EEG emotion recognition with super-resolution superlet transform and self-attention CNN published in Biomedical Signal Processing and Control.' },
 ];
 
-// Highlights carousel — text-based achievement cards (no photos needed). Edit freely.
+// Highlights carousel: text-based achievement cards (no photos needed). Edit freely.
 export const HIGHLIGHTS = [
-  { kicker: 'Multimodal', title: 'EEG, MEG & SEEG', body: 'From non-invasive recordings to intracranial signals — studying brain dynamics across scales.' },
+  { kicker: 'Multimodal', title: 'EEG, MEG & SEEG', body: 'From non-invasive recordings to intracranial signals, studying brain dynamics across scales.' },
   { kicker: 'Clinical impact', title: 'Seizure localisation from SEEG', body: 'Data-driven segmentation and network dynamics to support epilepsy surgery decisions.' },
-  { kicker: 'Interpretable AI', title: 'Explainable models for brain data', body: 'ML that reveals physiological and clinical patterns — not just predictions.' },
+  { kicker: 'Interpretable AI', title: 'Explainable models for brain data', body: 'ML that reveals physiological and clinical patterns, not just predictions.' },
   { kicker: 'Collaborations', title: 'From bench to bedside', body: 'Ties to Cleveland Clinic Epilepsy Center and University Hospital RWTH Aachen.' },
 ];
 
-// Members — the PI is real; open positions are advertised honestly instead of placeholder people.
+// Members: the PI is real; open positions are advertised honestly instead of placeholder people.
 export const PI = {
   name: 'Dr. Himanshu Kumar',
   role: 'Principal Investigator · Assistant Professor',
   affil: 'Mehta Family School of Biosciences & Biomedical Engineering, IIT Indore',
-  bio: 'Biomedical signal processing, neurotechnology, and machine learning — EEG/SEEG/MEG, seizure characterisation, affective computing, and brain-network analysis. Previously postdoc at Cleveland Clinic Epilepsy Center and, as a DAAD Bi-National Guided Research Fellow, guest scientist at University Hospital RWTH Aachen, Germany. PhD, IIT Madras.',
+  bio: 'Biomedical signal processing, neurotechnology, and machine learning: EEG/SEEG/MEG, seizure characterisation, affective computing, and brain-network analysis. Previously postdoc at Cleveland Clinic Epilepsy Center and, as a DAAD Bi-National Guided Research Fellow, guest scientist at University Hospital RWTH Aachen, Germany. PhD, IIT Madras.',
   awards: [
-    'DAAD Bi-National Guided Research Fellow — RWTH Aachen',
-    'Postdoctoral Fellow — Cleveland Clinic Epilepsy Center',
-    'Medal for academic excellence — IIIT Allahabad',
+    'DAAD Bi-National Guided Research Fellow, RWTH Aachen',
+    'Postdoctoral Fellow, Cleveland Clinic Epilepsy Center',
+    'Medal for academic excellence, IIIT Allahabad',
   ],
   links: [
     ['Website', 'https://himsriv24.github.io'],

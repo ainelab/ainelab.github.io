@@ -4,14 +4,14 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { PI, OPENINGS } from '../data/content.js';
 ---
-<Layout title="People — AI-NE Lab, IIT Indore">
+<Layout title="People · AI-NE Lab, IIT Indore">
   <Nav />
 
   <section class="border-b border-line">
     <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
       <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-3">People</p>
       <h1 class="font-serif text-3xl sm:text-4xl font-semibold tracking-tight text-ink">The group</h1>
-      <p class="mt-4 text-muted leading-relaxed max-w-2xl">A multidisciplinary group across neuroscience, engineering, mathematics, and AI — and growing.</p>
+      <p class="mt-4 text-muted leading-relaxed max-w-2xl">A multidisciplinary group across neuroscience, engineering, mathematics, and AI, and growing.</p>
     </div>
   </section>
 
@@ -27,7 +27,7 @@ import { PI, OPENINGS } from '../data/content.js';
           <p class="text-sm text-brand">{PI.affil}</p>
           <p class="mt-4 text-sm text-muted leading-relaxed max-w-2xl">{PI.bio}</p>
           <ul class="mt-4 space-y-1">
-            {PI.awards.map((a) => (<li class="text-[13px] text-muted">— {a}</li>))}
+            {PI.awards.map((a) => (<li class="text-[13px] text-muted">· {a}</li>))}
           </ul>
           <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1">
             {PI.links.map(([label, href]) => (
