@@ -9,29 +9,31 @@ import { RESEARCH, NEWS, PI } from '../data/content.js';
 
   <!-- HERO -->
   <section class="border-b border-line">
-    <div class="relative w-full h-[30vh] sm:h-[38vh] bg-black overflow-hidden flex items-center justify-center">
-      <video autoplay loop muted playsinline aria-hidden="true"
-             class="h-[165%] w-auto max-w-none"
-             style="filter: hue-rotate(120deg) saturate(1.7) brightness(1.02)">
-        <source src="/brain-net.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
-      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-5">IIT Indore &middot; Mehta Family School of BSBE</p>
-      <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] max-w-3xl text-ink">
-        AI &amp; Neural Engineering Laboratory
-      </h1>
-      <p class="mt-5 text-lg sm:text-xl text-ink max-w-2xl leading-snug">
-        Advancing brain health through neural signals &amp; AI
-      </p>
-      <p class="mt-4 text-base sm:text-lg text-muted max-w-2xl leading-relaxed">
-        We build computational, data-driven, and neuroengineering approaches to understand the
-        human brain in health and neurological disease, across EEG, MEG, and SEEG.
-      </p>
-      <div class="mt-8 flex flex-wrap gap-4 items-center">
-        <a href="/research" class="text-sm font-semibold text-brand hover:text-ink transition">Explore research →</a>
-        <span class="text-line">|</span>
-        <a href="/publications" class="text-sm font-semibold text-brand hover:text-ink transition">Read our work →</a>
+    <div class="mx-auto max-w-6xl px-5 py-12 sm:py-16 grid lg:grid-cols-[minmax(0,420px)_1fr] gap-10 lg:gap-14 items-center">
+      <div class="relative w-full max-w-[420px] mx-auto aspect-square bg-black rounded-2xl overflow-hidden border border-line order-1 lg:order-none">
+        <video autoplay loop muted playsinline aria-hidden="true"
+               class="absolute inset-0 w-full h-full object-cover"
+               style="filter: hue-rotate(120deg) saturate(1.7) brightness(1.02)">
+          <source src="/brain-net.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div>
+        <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-5">IIT Indore &middot; Mehta Family School of BSBE</p>
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-ink">
+          AI &amp; Neural Engineering Laboratory
+        </h1>
+        <p class="mt-5 text-lg sm:text-xl text-ink leading-snug">
+          Advancing brain health through neural signals &amp; AI
+        </p>
+        <p class="mt-4 text-base sm:text-lg text-muted leading-relaxed">
+          We build computational, data-driven, and neuroengineering approaches to understand the
+          human brain in health and neurological disease, across EEG, MEG, and SEEG.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4 items-center">
+          <a href="/research" class="text-sm font-semibold text-brand hover:text-ink transition">Explore research →</a>
+          <span class="text-line">|</span>
+          <a href="/publications" class="text-sm font-semibold text-brand hover:text-ink transition">Read our work →</a>
+        </div>
       </div>
     </div>
   </section>
