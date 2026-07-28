@@ -3,6 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { RESEARCH, PROJECTS, METHODS } from '../data/content.js';
+
+// Split themes into questions (what we study) vs approaches (how we study it),
+// so tools and scientific directions are not conflated.
+const byTag = (t) => RESEARCH.find((r) => r.tag === t);
+// Clearer, question-first headings (data titles lead with a tool/modality in places).
+const heading = { MEG: 'Neurodegenerative disorders', Signals: 'Neural signals & brain networks' };
+const titleFor = (r) => heading[r.tag] || r.title;
+const questions = ['Clinical', 'MEG', 'Behaviour'].map(byTag).filter(Boolean);
+const approaches = ['Signals', 'AI'].map(byTag).filter(Boolean);
 ---
 <Layout title="Research — AI-NE Lab, IIT Indore">
   <Nav />
@@ -13,27 +22,25 @@ import { RESEARCH, PROJECTS, METHODS } from '../data/content.js';
       <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-3">Research</p>
       <h1 class="font-serif text-3xl sm:text-4xl font-semibold tracking-tight text-ink max-w-3xl">The brain is a dynamic network</h1>
       <p class="mt-4 text-muted leading-relaxed max-w-2xl">
-        Our work sits at the intersection of neural signal processing, network neuroscience,
-        and machine learning. We turn EEG, MEG, and SEEG recordings into interpretable markers
-        of how the brain works — in health and in neurological disease. The lab is organised
-        around five connected themes.
+        We separate the <span class="text-ink font-medium">questions we ask</span> about the brain
+        from the <span class="text-ink font-medium">tools we use</span> to answer them. The questions
+        are clinical and cognitive; the tools are neural signal processing, network neuroscience,
+        and interpretable machine learning applied to EEG, MEG, and SEEG.
       </p>
     </div>
   </section>
 
-  <!-- THEMES -->
+  <!-- WHAT WE STUDY -->
   <section class="border-b border-line">
     <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
-      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-6">Research themes</p>
-      <div class="divide-y divide-line">
-        {RESEARCH.map((r, i) => (
+      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-1">What we study</p>
+      <h2 class="font-serif text-2xl font-semibold text-ink">Questions &amp; clinical directions</h2>
+      <div class="mt-6 divide-y divide-line">
+        {questions.map((r, i) => (
           <article class="py-6 grid sm:grid-cols-[3.5rem_1fr] gap-3 sm:gap-6">
             <span class="font-serif text-2xl text-line leading-none pt-1">{String(i + 1).padStart(2, '0')}</span>
             <div>
-              <div class="flex items-baseline gap-3 flex-wrap">
-                <h2 class="font-serif text-xl font-semibold text-ink">{r.title}</h2>
-                <span class="mono text-[10px] uppercase tracking-wide text-brand-2 border border-line px-2 py-0.5 rounded">{r.tag}</span>
-              </div>
+              <h3 class="font-serif text-xl font-semibold text-ink">{titleFor(r)}</h3>
               <p class="mt-2 text-sm text-muted leading-relaxed max-w-2xl">{r.body}</p>
             </div>
           </article>
@@ -42,14 +49,51 @@ import { RESEARCH, PROJECTS, METHODS } from '../data/content.js';
     </div>
   </section>
 
-  <!-- CURRENT PROJECTS -->
+  <!-- HOW WE STUDY IT -->
   <section class="border-b border-line bg-panel-2/60">
     <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
-      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-2">Current projects</p>
-      <h2 class="font-serif text-2xl font-semibold text-ink">Ongoing directions &amp; open student work</h2>
+      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-1">How we study it</p>
+      <h2 class="font-serif text-2xl font-semibold text-ink">Tools &amp; approaches</h2>
+
+      <!-- modalities -->
+      <div class="mt-6 flex flex-wrap gap-3">
+        {['EEG', 'MEG', 'SEEG'].map((m) => (
+          <span class="mono text-xs uppercase tracking-wide text-brand border border-line bg-paper px-3 py-1.5">{m}</span>
+        ))}
+        <span class="text-sm text-muted self-center">— the recording modalities we work with.</span>
+      </div>
+
+      <!-- approach themes -->
+      <div class="mt-6 grid gap-6 sm:grid-cols-2">
+        {approaches.map((r) => (
+          <article class="border border-line bg-paper p-5">
+            <h3 class="font-serif text-lg font-semibold text-ink">{r.title}</h3>
+            <p class="mt-2 text-sm text-muted leading-relaxed">{r.body}</p>
+          </article>
+        ))}
+      </div>
+
+      <!-- methods list -->
+      <p class="mt-8 mono text-[11px] tracking-[0.2em] uppercase text-brand-2 mb-3">Core methods</p>
+      <ul class="grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3 max-w-3xl">
+        {METHODS.map((m) => (
+          <li class="text-sm text-muted flex gap-2.5 items-baseline border-b border-line pb-1.5">
+            <span class="text-brand">—</span>{m}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CURRENT PROJECTS -->
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
+      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-1">Current projects</p>
+      <h2 class="font-serif text-2xl font-semibold text-ink">Where questions meet tools</h2>
       <p class="mt-3 text-sm text-muted max-w-2xl leading-relaxed">
-        Concrete projects across the themes above, at levels from undergraduate to PhD.
-        Interested students can reach out through the <a href="/join" class="text-brand hover:text-ink">Join</a> page.
+        Each project pairs a clinical or cognitive question with a specific method, at levels from
+        undergraduate to PhD. Interested students can reach out through the
+        <a href="/join" class="text-brand hover:text-ink">Join</a> page.
       </p>
       <div class="mt-8 grid gap-5 sm:grid-cols-2">
         {PROJECTS.map((p) => (
@@ -63,21 +107,6 @@ import { RESEARCH, PROJECTS, METHODS } from '../data/content.js';
           </article>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- METHODS -->
-  <section class="border-b border-line">
-    <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
-      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-2">Methods &amp; approaches</p>
-      <h2 class="font-serif text-2xl font-semibold text-ink">How we work</h2>
-      <ul class="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3 max-w-3xl">
-        {METHODS.map((m) => (
-          <li class="text-sm text-muted flex gap-2.5 items-baseline border-b border-line pb-2">
-            <span class="text-brand">—</span>{m}
-          </li>
-        ))}
-      </ul>
     </div>
   </section>
 

@@ -81,7 +81,8 @@
       "WebFetch(domain:www.weiss-lab.com)",
       "Bash(rm -f academic-v2-1440.png academic-v2-390.png)",
       "Bash(xargs kill -9)",
-      "Bash(rm -f p-research.png)"
+      "Bash(rm -f p-research.png)",
+      "Bash(rm -f p-research2.png)"
     ]
   }
 }
