@@ -31,8 +31,8 @@ export const RESEARCH = [
     tag: 'Emotion',
     title: 'Affective computing & emotion recognition',
     body: 'Decoding emotional states from neural signals using advanced time–frequency analysis and machine learning.',
-    img: '/research/spectrogram.png',
-    credit: 'Super-resolution superlet time–frequency spectra. IEEE Sensors Letters (2025).',
+    img: '/research/bispectrum.png',
+    credit: 'Bispectral quadratic phase coupling of EEG across emotions. Biomed. Phys. Eng. Express (2026).',
   },
 ];
 
