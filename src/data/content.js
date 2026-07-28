@@ -1,8 +1,8 @@
 export const RESEARCH = [
   {
-    tag: 'Epilepsy',
-    title: 'Epilepsy & seizure networks · EEG, MEG & SEEG',
-    body: 'Envelope-based changepoint segmentation of seizures, seizure-network dynamics for localisation, and presurgical MEG-derived network-control metrics for temporal lobe epilepsy — across non-invasive and intracranial (SEEG) recordings.',
+    tag: 'Clinical',
+    title: 'Brain-network dynamics in neurological disease',
+    body: 'Envelope-based changepoint segmentation of seizures, seizure-network dynamics for localisation, and presurgical MEG-derived network-control metrics in temporal lobe epilepsy — across non-invasive and intracranial (EEG, MEG, SEEG) recordings.',
   },
   {
     tag: 'Networks',
