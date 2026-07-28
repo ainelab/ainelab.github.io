@@ -99,7 +99,10 @@
       "Bash(rm -rf /private/tmp/claude-501/-Users-himanshukumar-Documents-My-Lab-Website/0f17399c-70cf-4bb6-9799-f09c49429b88/scratchpad/crop /private/tmp/claude-501/-Users-himanshukumar-Documents-My-Lab-Website/0f17399c-70cf-4bb6-9799-f09c49429b88/scratchpad/extract)",
       "Bash(cp \"/Users/himanshukumar/Downloads/Gemini_Generated_Image_qxpg25qxpg25qxpg.png\" public/hero-eeg.png)",
       "Bash(sips -g pixelWidth -g pixelHeight public/hero-eeg.png)",
-      "Bash(rm -f hero-eeg.png)"
+      "Bash(rm -f hero-eeg.png)",
+      "Bash(cp \"/Users/himanshukumar/Downloads/Generated image 2.png\" public/hero-ai.png)",
+      "Bash(sips -g pixelWidth -g pixelHeight public/hero-ai.png)",
+      "Bash(rm -f hero-ai.png)"
     ]
   }
 }
