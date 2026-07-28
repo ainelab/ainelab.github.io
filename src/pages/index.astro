@@ -5,11 +5,10 @@ import Footer from '../components/Footer.astro';
 import { RESEARCH, NEWS, PI } from '../data/content.js';
 ---
 <Layout>
-  <div class="theme-dark">
   <Nav />
 
   <!-- HERO -->
-  <section class="border-b border-line">
+  <section class="theme-dark border-b border-line">
     <div class="mx-auto max-w-6xl px-5 py-12 sm:py-16 grid lg:grid-cols-[minmax(0,340px)_1fr] gap-10 lg:gap-14 items-center">
       <div class="relative w-full max-w-[340px] mx-auto aspect-square bg-black rounded-2xl overflow-hidden border border-line order-1 lg:order-none">
         <video autoplay loop muted playsinline aria-hidden="true"
@@ -100,5 +99,4 @@ import { RESEARCH, NEWS, PI } from '../data/content.js';
   </section>
 
   <Footer />
-  </div>
 </Layout>
