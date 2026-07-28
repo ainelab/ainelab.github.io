@@ -16,7 +16,7 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isActive = (href) => (href === '/' ? path === '/' : path === href || path.startsWith(href + '/'));
 ---
 <header class="border-b border-line bg-paper">
-  <div class="mx-auto max-w-5xl px-5 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+  <div class="mx-auto max-w-5xl px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
     <a href="/" class="flex items-center gap-2.5">
       <LogoMark size={34} />
       <span class="leading-tight">

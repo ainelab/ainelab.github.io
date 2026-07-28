@@ -8,7 +8,7 @@ import { TEACHING } from '../data/content.js';
   <Nav />
 
   <section class="border-b border-line">
-    <div class="mx-auto max-w-5xl px-5 py-14 sm:py-16">
+    <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
       <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-3">Teaching</p>
       <h1 class="font-serif text-3xl sm:text-4xl font-semibold tracking-tight text-ink">Courses</h1>
       <p class="mt-4 text-muted leading-relaxed max-w-2xl">Coursework at IIT Indore bridging signal processing, machine learning, and neural engineering.</p>
@@ -16,9 +16,9 @@ import { TEACHING } from '../data/content.js';
   </section>
 
   <section class="border-b border-line">
-    <div class="mx-auto max-w-5xl px-5 py-8 sm:py-10 divide-y divide-line">
+    <div class="mx-auto max-w-5xl px-5 py-6 sm:py-8 divide-y divide-line">
       {TEACHING.map((c) => (
-        <article class="py-7 grid sm:grid-cols-[10rem_1fr] gap-2 sm:gap-8">
+        <article class="py-4 grid sm:grid-cols-[10rem_1fr] gap-2 sm:gap-8">
           <div>
             <span class="mono text-[12px] text-brand">{c.code}</span>
             <p class="mono text-[11px] text-muted mt-0.5">{c.term}</p>

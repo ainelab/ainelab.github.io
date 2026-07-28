@@ -2,39 +2,82 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { RESEARCH, METHODS } from '../data/content.js';
+import { RESEARCH, PROJECTS, METHODS } from '../data/content.js';
 ---
 <Layout title="Research — AI-NE Lab, IIT Indore">
   <Nav />
 
+  <!-- INTRO -->
   <section class="border-b border-line">
-    <div class="mx-auto max-w-5xl px-5 py-14 sm:py-16">
+    <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
       <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-3">Research</p>
-      <h1 class="font-serif text-3xl sm:text-4xl font-semibold tracking-tight text-ink">The brain is a dynamic network</h1>
-      <p class="mt-4 text-muted leading-relaxed max-w-2xl">Five connected themes spanning neural signals, clinical neurotechnology, neurodegeneration, artificial intelligence, and behaviour — turning complex neural data into interpretable markers of brain function.</p>
-    </div>
-  </section>
-
-  <section class="border-b border-line">
-    <div class="mx-auto max-w-5xl px-5 py-12 sm:py-14 divide-y divide-line">
-      {RESEARCH.map((r) => (
-        <article class="py-7 grid sm:grid-cols-[9rem_1fr] gap-2 sm:gap-8">
-          <span class="mono text-[11px] uppercase tracking-wide text-brand-2 pt-1">{r.tag}</span>
-          <div>
-            <h2 class="font-serif text-xl font-semibold text-ink">{r.title}</h2>
-            <p class="mt-2 text-sm text-muted leading-relaxed max-w-2xl">{r.body}</p>
-          </div>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section class="border-b border-line">
-    <div class="mx-auto max-w-5xl px-5 py-12 sm:py-14">
-      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-4">Methods &amp; approaches</p>
-      <p class="text-sm text-muted leading-loose max-w-3xl">
-        {METHODS.map((m, i) => (<>{m}{i < METHODS.length - 1 ? <span class="text-line px-2">·</span> : null}</>))}
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold tracking-tight text-ink max-w-3xl">The brain is a dynamic network</h1>
+      <p class="mt-4 text-muted leading-relaxed max-w-2xl">
+        Our work sits at the intersection of neural signal processing, network neuroscience,
+        and machine learning. We turn EEG, MEG, and SEEG recordings into interpretable markers
+        of how the brain works — in health and in neurological disease. The lab is organised
+        around five connected themes.
       </p>
+    </div>
+  </section>
+
+  <!-- THEMES -->
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
+      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-6">Research themes</p>
+      <div class="divide-y divide-line">
+        {RESEARCH.map((r, i) => (
+          <article class="py-6 grid sm:grid-cols-[3.5rem_1fr] gap-3 sm:gap-6">
+            <span class="font-serif text-2xl text-line leading-none pt-1">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <div class="flex items-baseline gap-3 flex-wrap">
+                <h2 class="font-serif text-xl font-semibold text-ink">{r.title}</h2>
+                <span class="mono text-[10px] uppercase tracking-wide text-brand-2 border border-line px-2 py-0.5 rounded">{r.tag}</span>
+              </div>
+              <p class="mt-2 text-sm text-muted leading-relaxed max-w-2xl">{r.body}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRENT PROJECTS -->
+  <section class="border-b border-line bg-panel-2/60">
+    <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
+      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-2">Current projects</p>
+      <h2 class="font-serif text-2xl font-semibold text-ink">Ongoing directions &amp; open student work</h2>
+      <p class="mt-3 text-sm text-muted max-w-2xl leading-relaxed">
+        Concrete projects across the themes above, at levels from undergraduate to PhD.
+        Interested students can reach out through the <a href="/join" class="text-brand hover:text-ink">Join</a> page.
+      </p>
+      <div class="mt-8 grid gap-5 sm:grid-cols-2">
+        {PROJECTS.map((p) => (
+          <article class="border border-line bg-paper p-5">
+            <span class="mono text-[10px] uppercase tracking-wide text-brand">{p.level}</span>
+            <h3 class="font-serif mt-2 text-lg font-semibold text-ink leading-snug">{p.title}</h3>
+            <p class="mt-2 text-sm text-muted leading-relaxed">{p.body}</p>
+            <ul class="mt-3 flex flex-wrap gap-x-3 gap-y-1">
+              {p.skills.map((s) => (<li class="mono text-[11px] text-brand-2">{s}</li>))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODS -->
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
+      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-2">Methods &amp; approaches</p>
+      <h2 class="font-serif text-2xl font-semibold text-ink">How we work</h2>
+      <ul class="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3 max-w-3xl">
+        {METHODS.map((m) => (
+          <li class="text-sm text-muted flex gap-2.5 items-baseline border-b border-line pb-2">
+            <span class="text-brand">—</span>{m}
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
