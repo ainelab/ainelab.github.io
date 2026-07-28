@@ -1,7 +1,7 @@
 export const RESEARCH = [
   {
     tag: 'Clinical',
-    title: 'Brain-network dynamics in neurological disease',
+    title: 'Clinical & translational neuroscience',
     body: 'Envelope-based changepoint segmentation of seizures, seizure-network dynamics for localisation, and presurgical MEG-derived network-control metrics in temporal lobe epilepsy — across non-invasive and intracranial (EEG, MEG, SEEG) recordings.',
   },
   {
