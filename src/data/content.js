@@ -7,7 +7,7 @@ export const RESEARCH = [
   {
     tag: 'Clinical',
     title: 'Epilepsy & clinical neurotechnology',
-    body: 'Non-invasive and invasive recordings (EEG, SEEG) to identify clinically meaningful biomarkers, characterise seizure-related network dynamics, and build data-driven tools for seizure localisation and monitoring.',
+    body: 'Non-invasive and invasive recordings (EEG, MEG, SEEG) to identify clinically meaningful biomarkers, characterise seizure-related network dynamics, and build data-driven tools for seizure localisation and monitoring.',
   },
   {
     tag: 'MEG',
