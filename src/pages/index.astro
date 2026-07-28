@@ -43,7 +43,7 @@ import { RESEARCH, NEWS, PI } from '../data/content.js';
         <a href="/research" class="text-sm font-semibold text-brand hover:text-ink transition">All research areas →</a>
       </div>
       <div class="mt-8 divide-y divide-line">
-        {RESEARCH.map((r) => (
+        {RESEARCH.filter((r) => ['Clinical', 'Behaviour', 'XAI'].includes(r.tag)).map((r) => (
           <article class="py-4 grid sm:grid-cols-[8rem_1fr] gap-2 sm:gap-8">
             <span class="mono text-[11px] uppercase tracking-wide text-brand-2 pt-0.5">{r.tag}</span>
             <div>
