@@ -167,6 +167,7 @@ export const PI = {
   bio: 'Biomedical signal processing, neurotechnology, and machine learning: EEG/SEEG/MEG, seizure characterisation, affective computing, and brain-network analysis. Previously postdoc at Cleveland Clinic Epilepsy Center and, as a DAAD Bi-National Guided Research Fellow, guest scientist at University Hospital RWTH Aachen, Germany. Integrated M.Tech in Biomedical Engineering, IIIT Allahabad; PhD, IIT Madras.',
   awards: [
     'DAAD Bi-National Guided Research Fellow, RWTH Aachen',
+    'AROP Fellowship, Uniklinik RWTH Aachen',
     'Postdoctoral Fellow, Cleveland Clinic Epilepsy Center',
     'Medal for academic excellence, IIIT Allahabad',
   ],
