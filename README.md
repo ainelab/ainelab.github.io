@@ -1,10 +1,10 @@
 # AI-NE Lab website
 
 Website for the **AI and Neural Engineering Laboratory (AI-NE Lab)**, Mehta Family
-School of Biosciences and Biomedical Engineering, IIT Indore.
+School of Biosciences and Biomedical Engineering (MFS-BSBE), IIT Indore.
 
-Built with **Astro + Tailwind CSS v4**, with an animated brain **connectome** in the
-hero rendered in **Three.js** from real MNI-space atlas coordinates (AAL-derived).
+Built with **Astro + Tailwind CSS v4**. Multi-page academic site with a dark hero
+band featuring an animated brain-network video.
 
 Live at **https://ainelab.github.io** (deployed via GitHub Actions).
 
@@ -20,20 +20,28 @@ npm run preview
 ## Structure
 
 ```
-src/pages/index.astro     Single-page site: hero · research · projects · publications · join
-src/layouts/Layout.astro  HTML shell, fonts, meta
-src/components …          (inline in index.astro)
-src/scripts/connectome.js Three.js connectome (nodes, edges, travelling signals)
-src/data/atlas.js         Region centroids in MNI space (AAL-derived)
-src/data/content.js       Research areas, projects, publications, stats — edit here
-src/styles/global.css     Tailwind + theme tokens
-.github/workflows/deploy.yml  Build + deploy to GitHub Pages
+src/pages/index.astro        Home: dark hero band + research overview
+src/pages/research.astro     Research areas with figures
+src/pages/people.astro       PI and lab members
+src/pages/publications.astro Selected recent work
+src/pages/teaching.astro     Courses
+src/pages/news.astro         Lab news
+src/pages/join.astro         Openings (PhD, M.Tech, undergraduate)
+src/layouts/Layout.astro     HTML shell, fonts, meta
+src/components/Nav.astro      Sticky nav + mobile dropdown menu
+src/components/Footer.astro   Shared footer
+src/components/LogoMark.astro Logo mark
+src/data/content.js          Research areas, publications, teaching, news, PI — edit here
+src/styles/global.css        Tailwind + theme tokens (light + scoped dark hero)
+public/brain-net.mp4         Hero brain-network animation
+.github/workflows/deploy.yml Build + deploy to GitHub Pages
 ```
 
 ## Edit content
 
-All copy lives in `src/data/content.js` — research areas, open projects, publications,
-and the hero stat tiles. The connectome layout comes from `src/data/atlas.js`.
+Most copy lives in `src/data/content.js` — research areas, publications, teaching,
+and news. Page-specific copy (Join, People) lives inline in the respective
+`src/pages/*.astro` file.
 
 ## Deploy
 
@@ -45,6 +53,6 @@ Source → GitHub Actions**.
 
 ## Accessibility / performance notes
 
-- Honors `prefers-reduced-motion` (connectome and reveals freeze).
-- Connectome pauses when the tab is hidden.
+- Honors `prefers-reduced-motion`.
+- Hero video pauses when the tab is hidden.
 - Fully responsive; verified at 390 px and 1440 px.
