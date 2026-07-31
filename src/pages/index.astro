@@ -2,37 +2,52 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { RESEARCH, NEWS, PI } from '../data/content.js';
+import { RESEARCH, NEWS, PI, AFFILIATIONS, OPENINGS, PUBLICATIONS } from '../data/content.js';
+
+const FEATURED = PUBLICATIONS.filter((p) => p.img).slice(0, 3);
 ---
 <Layout>
   <Nav />
 
-  <!-- HERO -->
-  <section class="theme-dark border-b border-line">
-    <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24 grid lg:grid-cols-[minmax(0,400px)_1fr] gap-10 lg:gap-16 items-center min-h-[60vh]">
-      <div class="relative w-full max-w-[400px] mx-auto aspect-square overflow-hidden order-1 lg:order-none">
-        <video autoplay loop muted playsinline aria-hidden="true"
-               class="absolute inset-0 w-full h-full object-cover"
-               style="filter: hue-rotate(120deg) saturate(1.7) brightness(1.02)">
-          <source src="/brain-net.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="flex flex-col justify-center">
-        <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-5">IIT Indore &middot; Mehta Family School of BSBE</p>
-        <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.1] text-ink">
-          AI &amp; Neural Engineering Laboratory
-        </h1>
-        <p class="mt-5 text-lg sm:text-xl text-ink leading-snug">
-          Advancing brain health through neural signals &amp; AI
-        </p>
-        <div class="mt-8 flex flex-wrap gap-4 items-center">
-          <a href="/research" class="text-sm font-semibold text-brand hover:text-ink transition">Explore research →</a>
-          <span class="text-line">|</span>
-          <a href="/publications" class="text-sm font-semibold text-brand hover:text-ink transition">Read our work →</a>
+  <!-- DARK BAND: hero + affiliations — fills first viewport; light content starts on scroll -->
+  <div class="theme-dark flex flex-col min-h-[calc(100vh-4rem)] pt-8 sm:pt-12">
+    <!-- HERO -->
+    <section class="flex-1 flex items-center">
+      <div class="mx-auto max-w-6xl px-5 py-12 sm:py-16 grid lg:grid-cols-[minmax(0,320px)_1fr] gap-10 lg:gap-16 items-center w-full">
+        <div class="relative w-full max-w-[320px] mx-auto aspect-square overflow-hidden">
+          <video autoplay loop muted playsinline aria-hidden="true"
+                 class="absolute inset-0 w-full h-full object-cover"
+                 style="filter: hue-rotate(120deg) saturate(1.7) brightness(1.02)">
+            <source src="/brain-net.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="flex flex-col justify-center">
+          <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-5">IIT Indore &middot; Mehta Family School of BSBE</p>
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.1] text-ink">
+            AI &amp; Neural Engineering Laboratory
+          </h1>
+          <p class="mt-5 text-lg sm:text-xl text-ink leading-snug">
+            Advancing brain health through neural signals &amp; AI
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4 items-center">
+            <a href="/research" class="text-sm font-semibold text-brand hover:text-ink transition">Explore research →</a>
+            <span class="text-line">|</span>
+            <a href="/publications" class="text-sm font-semibold text-brand hover:text-ink transition">Read our work →</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- AFFILIATIONS -->
+    <section class="mb-10 sm:mb-16">
+      <div class="mx-auto max-w-5xl px-5 py-4 flex flex-wrap items-center gap-x-3 gap-y-2 justify-center">
+        <span class="mono text-[10px] uppercase tracking-[0.2em] text-brand-2 mr-1">Homes &amp; collaborations</span>
+        {AFFILIATIONS.map((a) => (
+          <span class="mono text-[11px] text-muted border border-line rounded-full px-3 py-1">{a}</span>
+        ))}
+      </div>
+    </section>
+  </div>
 
   <!-- RESEARCH OVERVIEW -->
   <section class="border-b border-line">
@@ -50,7 +65,37 @@ import { RESEARCH, NEWS, PI } from '../data/content.js';
             <span class="mono text-[11px] uppercase tracking-wide text-brand-2 pt-0.5">{r.tag}</span>
             <div>
               <h3 class="font-serif text-lg font-semibold text-ink">{r.title}</h3>
-              <p class="mt-1.5 text-sm text-muted leading-relaxed max-w-xl">{r.body}</p>
+              <p class="mt-1.5 text-sm text-muted leading-relaxed max-w-[68ch]">{r.body}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED PUBLICATIONS (figure-forward) -->
+  <section class="border-b border-line bg-panel-2/60">
+    <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-3">Publications</p>
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-ink">Selected work</h2>
+        </div>
+        <a href="/publications" class="text-sm font-semibold text-brand hover:text-ink transition">All publications →</a>
+      </div>
+      <div class="mt-8 grid gap-6 sm:grid-cols-3">
+        {FEATURED.map((p) => (
+          <article class="group border border-line bg-panel card-hover flex flex-col">
+            <div class="h-40 sm:h-auto sm:aspect-[4/3] overflow-hidden border-b border-line bg-panel-2">
+              <img src={p.img} alt="" loading="lazy" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-4 flex flex-col grow">
+              <p class="mono text-[10px] uppercase tracking-wide text-brand-2">{p.venue} &middot; {p.year}</p>
+              {p.link
+                ? <a href={p.link} target="_blank" rel="noopener" class="mt-2 font-semibold text-sm leading-snug text-ink group-hover:text-brand transition">{p.title}</a>
+                : <p class="mt-2 font-semibold text-sm leading-snug text-ink">{p.title}</p>}
+              <p class="mt-2 text-[12px] text-muted">{p.authors}</p>
+              {p.link && <a href={p.link} target="_blank" rel="noopener" class="mono text-[11px] text-brand hover:text-ink transition mt-3">DOI ↗</a>}
             </div>
           </article>
         ))}
@@ -59,15 +104,42 @@ import { RESEARCH, NEWS, PI } from '../data/content.js';
   </section>
 
   <!-- PI SNAPSHOT -->
-  <section class="border-b border-line bg-panel-2/60">
+  <section class="border-b border-line">
     <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11 flex flex-col sm:flex-row gap-6 items-start">
       <img src="/himanshu-kumar.jpg" alt="Dr. Himanshu Kumar" width="112" height="140" loading="lazy" class="shrink-0 w-28 h-36 object-cover object-top border border-line" />
       <div>
         <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-2">Principal Investigator</p>
         <h2 class="font-serif text-2xl font-semibold text-ink">{PI.name}</h2>
         <p class="text-sm text-brand">{PI.affil}</p>
-        <p class="mt-3 text-sm text-muted leading-relaxed max-w-2xl">{PI.bio}</p>
-        <a href="/people" class="mt-4 inline-block text-sm font-semibold text-brand hover:text-ink transition">Meet the group →</a>
+        <p class="mt-3 text-sm text-muted leading-relaxed max-w-[68ch]">{PI.bio}</p>
+        <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1 items-center">
+          {PI.links.map(([label, href]) => (
+            <a href={href} target={href.startsWith('mailto') ? undefined : '_blank'} rel="noopener" class="mono text-[12px] text-brand hover:text-ink transition">{label}</a>
+          ))}
+          <span class="text-line">·</span>
+          <a href="/people" class="text-sm font-semibold text-brand hover:text-ink transition">Meet the group →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPENINGS CALLOUT -->
+  <section class="border-b border-line bg-panel-2/60">
+    <div class="mx-auto max-w-5xl px-5 py-9 sm:py-11">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-3">Openings</p>
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-ink">Join the lab</h2>
+        </div>
+        <a href="/join" class="text-sm font-semibold text-brand hover:text-ink transition">How to apply →</a>
+      </div>
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        {OPENINGS.map((o) => (
+          <div class="border border-line bg-panel p-4">
+            <p class="mono text-[12px] text-brand">{o.level}</p>
+            <p class="mt-2 text-sm text-muted leading-relaxed">{o.body}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

@@ -90,12 +90,14 @@ export const PUBLICATIONS = [
     title: 'Subject-independent emotion recognition with EEG bispectral quadratic phase coupling features and explainable machine learning',
     authors: 'Kumar H, Ganapathy N, Puthankattil SD, Swaminathan R',
     link: 'https://iopscience.iop.org/article/10.1088/2057-1976/ae711a',
+    img: '/research/bispectrum.png',
   },
   {
     year: 2026, venue: 'Annals of Biomedical Engineering',
     title: 'Three-Phase Seizure Segmentation in Stereotactic EEG Using Envelope-Based Multivariate Changepoint Analysis',
     authors: 'Kumar H, Seshadri NPG, Martinez D, Najm I, Alexopoulos A, Bulacio JC, Serletis D, Krishnan B',
     link: 'https://doi.org/10.1007/s10439-026-04097-7',
+    img: '/research/seizure-seeg.png',
   },
   {
     year: 2026, venue: 'Biomedical Signal Processing and Control',
@@ -120,6 +122,7 @@ export const PUBLICATIONS = [
     title: 'Functional Brain Networks of Trait Impulsivity: A Connectome-Based Predictive Modeling Analysis',
     authors: 'Hüpen P, Kumar H, Swaminathan R, Habel U, Wagels L',
     link: 'https://doi.org/10.1002/hbm.70059',
+    img: '/research/connectome.png',
   },
   {
     year: 2024, venue: 'IEEE Access',
@@ -133,6 +136,15 @@ export const PUBLICATIONS = [
     authors: 'Hüpen P, Kumar H*, Shymanskaya A, Swaminathan R, Habel U',
     link: 'https://doi.org/10.1142/S0129065723500065',
   },
+];
+
+// Institutional homes & collaborations — text-based credibility strip (swap for logos when available).
+export const AFFILIATIONS = [
+  'IIT Indore',
+  'Mehta Family School of BSBE',
+  'Neurological Institute, Cleveland Clinic',
+  'University Hospital RWTH Aachen',
+  'DAAD',
 ];
 
 export const STATS = [
