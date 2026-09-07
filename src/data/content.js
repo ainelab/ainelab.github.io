@@ -86,6 +86,12 @@ export const PROJECTS = [
 // Selected recent publications (full list on Google Scholar).
 export const PUBLICATIONS = [
   {
+    year: 2026, venue: 'IEEE Transactions on Biomedical Engineering',
+    title: 'Identifiability of Spectral Graph Model Parameters in Clinical MEG: Implications for Biophysical Interpretation and SOZ Localization',
+    authors: 'Kumar H, Seshadri NPG, Nair N, Najm I, Burgess R, Alexopoulos A, Murakami H, Krishnan B',
+    link: 'https://doi.org/10.1109/TBME.2026.3730069',
+  },
+  {
     year: 2026, venue: 'Biomedical Physics & Engineering Express',
     title: 'Subject-independent emotion recognition with EEG bispectral quadratic phase coupling features and explainable machine learning',
     authors: 'Kumar H, Ganapathy N, Puthankattil SD, Swaminathan R',
@@ -156,6 +162,7 @@ export const STATS = [
 
 // Dated updates, newest first. Seeded from recent publications & lab milestones; edit freely.
 export const NEWS = [
+  { date: 'Aug 2026', tag: 'Publication', text: 'New paper on identifiability of spectral graph model parameters in clinical MEG published in IEEE Transactions on Biomedical Engineering.' },
   { date: 'Jul 2026', tag: 'Lab', text: 'AI-NE Lab established at IIT Indore within the Mehta Family School of Biosciences & Biomedical Engineering.' },
   { date: 'Jun 2026', tag: 'Publication', text: 'MEG-derived network control metrics for temporal lobe epilepsy accepted at Epilepsia.' },
   { date: 'May 2026', tag: 'Publication', text: 'New paper on subject-independent EEG emotion recognition with bispectral features and explainable ML published in Biomedical Physics & Engineering Express.' },
