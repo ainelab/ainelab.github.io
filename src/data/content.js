@@ -148,8 +148,8 @@ export const PUBLICATIONS = [
 export const AFFILIATIONS = [
   'IIT Indore',
   'Mehta Family School of BSBE',
-  'Neurological Institute, Cleveland Clinic',
-  'University Hospital RWTH Aachen',
+  'Neurological Institute, Cleveland Clinic, USA',
+  'University Hospital RWTH Aachen, Germany',
   'DAAD',
 ];
 
@@ -175,7 +175,7 @@ export const HIGHLIGHTS = [
   { kicker: 'Multimodal', title: 'EEG, MEG & SEEG', body: 'From non-invasive recordings to intracranial signals, studying brain dynamics across scales.' },
   { kicker: 'Clinical impact', title: 'Seizure localisation from SEEG', body: 'Data-driven segmentation and network dynamics to support epilepsy surgery decisions.' },
   { kicker: 'Interpretable AI', title: 'Explainable models for brain data', body: 'ML that reveals physiological and clinical patterns, not just predictions.' },
-  { kicker: 'Collaborations', title: 'From bench to bedside', body: 'Ties to Cleveland Clinic Epilepsy Center and University Hospital RWTH Aachen.' },
+  { kicker: 'Collaborations', title: 'From bench to bedside', body: 'Ties to Cleveland Clinic Epilepsy Center, USA and University Hospital RWTH Aachen, Germany.' },
 ];
 
 // Members: the PI is real; open positions are advertised honestly instead of placeholder people.
@@ -183,11 +183,11 @@ export const PI = {
   name: 'Dr. Himanshu Kumar',
   role: 'Principal Investigator · Assistant Professor',
   affil: 'Mehta Family School of Biosciences & Biomedical Engineering, IIT Indore',
-  bio: 'Biomedical signal processing, neurotechnology, and machine learning: EEG/SEEG/MEG, seizure characterisation, affective computing, and brain-network analysis. Previously a postdoctoral fellow at Cleveland Clinic Epilepsy Center and, during his PhD, a DAAD Bi-National Guided Research Fellow and guest scientist at University Hospital RWTH Aachen, Germany. Integrated B.Tech–M.Tech in Biomedical Engineering, IIIT Allahabad; PhD, IIT Madras.',
+  bio: 'Biomedical signal processing, neurotechnology, and machine learning: EEG/SEEG/MEG, seizure characterisation, affective computing, and brain-network analysis. Previously a postdoctoral fellow at Cleveland Clinic Epilepsy Center, USA and, during his PhD, a DAAD Bi-National Guided Research Fellow and guest scientist at University Hospital RWTH Aachen, Germany. Integrated B.Tech–M.Tech in Biomedical Engineering, IIIT Allahabad; PhD, IIT Madras.',
   awards: [
-    'DAAD Bi-National Guided Research Fellow, RWTH Aachen',
-    'AROP Fellowship, Uniklinik RWTH Aachen',
-    'Postdoctoral Fellow, Cleveland Clinic Epilepsy Center',
+    'DAAD Bi-National Guided Research Fellow, RWTH Aachen, Germany',
+    'AROP Fellowship, Uniklinik RWTH Aachen, Germany',
+    'Postdoctoral Fellow, Cleveland Clinic Epilepsy Center, USA',
     'Medal for academic excellence, IIIT Allahabad',
   ],
   links: [
