@@ -214,6 +214,7 @@ export const TEACHING = [
 // PI photo strip on the People page, newest first. `file` is a name in src/assets/moments/;
 // `desc` is the sentence under the photo, `caption` the event line; `pos` (optional) is the CSS object-position for the crop.
 export const MOMENTS = [
+  { file: '2026-cleveland-clinic.jpg', pos: '50% 45%', desc: 'Dr. Kumar at Cleveland Clinic during his postdoctoral fellowship at the Neurological Institute.', caption: 'Neurological Institute, Cleveland Clinic · Cleveland, USA', alt: 'Himanshu Kumar on the Cleveland Clinic main campus, with the reflecting pool and a clinic building behind him' },
   { file: '2026-assfn.jpg', pos: '50% 25%', desc: 'Dr. Kumar at the ASSFN Biennial Meeting, joining neurosurgeons and engineers working on stereotactic and functional neurosurgery.', caption: 'ASSFN Biennial Meeting · Cleveland, 2026', alt: 'Himanshu Kumar beside the ASSFN 2026 Biennial Meeting banner' },
   { file: '2025-aes-poster.jpg', desc: 'Dr. Kumar presenting unsupervised, contrastive learning of seizure-onset patterns from stereo-EEG.', caption: 'American Epilepsy Society (AES) 2025 · Atlanta', alt: 'Himanshu Kumar standing beside his stereo-EEG seizure-onset poster at the AES 2025 Annual Meeting' },
   { file: '2025-aes.jpg', desc: 'Dr. Kumar at the American Epilepsy Society Annual Meeting, sharing seizure-network research with clinicians and scientists.', caption: 'AES Annual Meeting · Atlanta, 2025', alt: 'Himanshu Kumar in front of the AES 2025 Annual Meeting sign' },
@@ -223,4 +224,5 @@ export const MOMENTS = [
   { file: '2022-memea-talk.jpg', desc: 'Dr. Kumar giving a talk on time- and frequency-domain analysis of surface EMG during APB muscle abduction.', caption: 'IEEE MeMeA 2022 · Taormina, Italy', alt: 'Himanshu Kumar giving an oral presentation at a podium at IEEE MeMeA 2022' },
   { file: '2022-nice.jpg', desc: 'Dr. Kumar with colleagues at Medical Informatics Europe, Europe\'s flagship digital-health conference.', caption: 'MIE 2022 · Nice, France', alt: 'Himanshu Kumar with three colleagues at MIE 2022 in Nice' },
   { file: '2021-bmt.jpg', pos: '50% 55%', desc: 'Dr. Kumar at the annual conference of the German Society for Biomedical Engineering (DGBMT).', caption: 'BMT 2021 · Hannover, Germany', alt: 'Himanshu Kumar beside the BMT 2021 conference banner in Hannover' },
+  { file: '2021-tu-braunschweig.jpg', desc: 'Dr. Kumar on a visit to Technische Universität Braunschweig.', caption: 'TU Braunschweig · Germany, 2021', alt: 'Himanshu Kumar standing beside a Technische Universität Braunschweig sign' },
 ];
