@@ -13,14 +13,15 @@ const resolve = (name: string) => {
   if (!hit) throw new Error(`PhotoStrip: missing src/assets/moments/${name}`);
   return hit[1].default;
 };
-const btn = 'w-9 h-9 grid place-items-center border border-line text-ink hover:border-brand hover:text-brand transition';
+const btn = 'w-8 h-8 grid place-items-center rounded-full text-white/90 hover:text-white hover:bg-white/15 transition focus-visible:outline-2 focus-visible:outline-white';
 ---
 <div class="photo-strip relative" data-photo-strip data-interval={interval}>
-  <div class="flex justify-end gap-2 mb-3">
-    <button type="button" data-toggle aria-label="Pause slideshow" class={btn + ' hidden'}>
-      <span data-icon-pause aria-hidden="true">❚❚</span><span data-icon-play aria-hidden="true" class="hidden">▶</span>
-    </button>
+  <!-- Glass control pill floats over the top-right photo. -->
+  <div class="glass-pill absolute top-3 right-3 z-10 flex items-center rounded-full p-1">
     <button type="button" data-dir="-1" aria-label="Previous photo" class={btn}>←</button>
+    <button type="button" data-toggle aria-label="Pause slideshow" class={btn + ' hidden'}>
+      <span data-icon-pause aria-hidden="true" class="text-[11px]">❚❚</span><span data-icon-play aria-hidden="true" class="hidden text-[11px]">▶</span>
+    </button>
     <button type="button" data-dir="1" aria-label="Next photo" class={btn}>→</button>
   </div>
   <ul class="strip-track flex gap-5 overflow-x-auto snap-x snap-mandatory pb-3" tabindex="0" role="region" aria-roledescription="carousel" aria-label={label}>

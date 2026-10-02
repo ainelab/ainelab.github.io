@@ -15,7 +15,7 @@ const nav = [
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isActive = (href) => (href === '/' ? path === '/' : path === href || path.startsWith(href + '/'));
 ---
-<header class="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-md">
+<header class="glass-bar sticky top-0 z-50 border-b border-line">
   <div class="mx-auto max-w-5xl px-5 h-16 flex items-center justify-between gap-4">
     <a href="/" class="flex items-center gap-2.5 shrink-0">
       <LogoMark size={34} />
@@ -46,7 +46,7 @@ const isActive = (href) => (href === '/' ? path === '/' : path === href || path.
   </div>
 
   <!-- mobile dropdown -->
-  <nav id="mobileMenu" class="hidden md:hidden border-t border-line bg-paper px-5 py-2">
+  <nav id="mobileMenu" class="hidden md:hidden border-t border-line px-5 py-2">
     {nav.map(([label, href]) => (
       <a href={href} class={`block py-2.5 text-[15px] font-medium ${isActive(href) ? 'text-brand' : 'text-muted'}`}>{label}</a>
     ))}
