@@ -210,3 +210,16 @@ export const TEACHING = [
   { code: 'BSE 644 / 444', title: 'Biomedical Signal and Image Processing', term: 'Fall 2026', credits: '2-1-0 (3)', note: 'Signal and image processing methods for biomedical data. Co-taught with other faculty.' },
   { code: 'BSE 647', title: 'Medical Device Design and Dissection', term: 'Fall 2026', credits: '0-1-4 (3)', note: 'Lab course on design and dissection of medical devices. Co-taught with other faculty.' },
 ];
+
+// PI photo strip on the People page, newest first. `file` is a name in src/assets/moments/.
+export const MOMENTS = [
+  { file: '2026-assfn.jpg', caption: 'ASSFN Biennial Meeting · Cleveland, 2026', alt: 'Himanshu Kumar beside the ASSFN 2026 Biennial Meeting banner' },
+  { file: '2025-aes-poster.jpg', caption: 'Poster on contrastive learning of SEEG seizure-onset patterns · AES 2025, Atlanta', alt: 'Himanshu Kumar standing beside his stereo-EEG seizure-onset poster at the AES 2025 Annual Meeting' },
+  { file: '2025-aes.jpg', caption: 'American Epilepsy Society Annual Meeting · Atlanta, 2025', alt: 'Himanshu Kumar in front of the AES 2025 Annual Meeting sign' },
+  { file: '2024-convocation.jpg', caption: 'PhD convocation, IIT Madras · Chennai, 2024', alt: 'Himanshu Kumar receiving his PhD degree on stage at the IIT Madras 61st Convocation' },
+  { file: '2022-embc-poster.jpg', caption: 'Poster presentation · IEEE EMBC 2022, Glasgow', alt: 'Himanshu Kumar presenting a digital poster at IEEE EMBC 2022' },
+  { file: '2022-embc.jpg', caption: 'IEEE EMBC 2022 · Glasgow, UK', alt: 'Himanshu Kumar at the IEEE EMBC 2022 welcome banner in Glasgow' },
+  { file: '2022-memea-talk.jpg', caption: 'Talk on surface-EMG analysis of APB muscle abduction · IEEE MeMeA 2022, Taormina, Italy', alt: 'Himanshu Kumar giving an oral presentation at a podium at IEEE MeMeA 2022' },
+  { file: '2022-nice.jpg', caption: 'With colleagues at MIE 2022, Medical Informatics Europe · Nice, France', alt: 'Himanshu Kumar with three colleagues at MIE 2022 in Nice' },
+  { file: '2021-bmt.jpg', caption: 'BMT 2021, DGBMT Annual Conference · Hannover, Germany', alt: 'Himanshu Kumar beside the BMT 2021 conference banner in Hannover' },
+];

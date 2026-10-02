@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { PI, OPENINGS } from '../data/content.js';
+import PhotoStrip from '../components/PhotoStrip.astro';
+import { PI, OPENINGS, MOMENTS } from '../data/content.js';
 ---
 <Layout title="People · AI-NE Lab, IIT Indore">
   <Nav />
@@ -35,6 +36,17 @@ import { PI, OPENINGS } from '../data/content.js';
             ))}
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ON THE ROAD -->
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-5xl px-5 py-6 sm:py-8">
+      <p class="mono text-xs tracking-[0.2em] uppercase text-brand mb-3">On the road</p>
+      <h2 class="font-serif text-2xl font-semibold text-ink">Talks, posters &amp; meetings</h2>
+      <div class="mt-4">
+        <PhotoStrip items={MOMENTS} label="Photos of talks, posters and meetings" />
       </div>
     </div>
   </section>
