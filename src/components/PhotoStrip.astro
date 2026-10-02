@@ -1,10 +1,11 @@
 ---
-// Horizontal, swipeable photo strip with captions. No autoplay: CSS scroll-snap plus arrow buttons.
+// Photo carousel with captions. Auto-advances, but pauses on hover/focus/touch, when off-screen or the tab
+// is hidden, and never auto-plays under prefers-reduced-motion. Pause button satisfies WCAG 2.2.2.
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
-interface Item { file: string; caption: string; alt: string }
-const { items, label = 'Photos' } = Astro.props as { items: Item[]; label?: string };
+interface Item { file: string; desc: string; caption: string; alt: string; pos?: string }
+const { items, label = 'Photos', interval = 4500 } = Astro.props as { items: Item[]; label?: string; interval?: number };
 
 const files = import.meta.glob<{ default: ImageMetadata }>('../assets/moments/*.{jpg,jpeg,png,webp}', { eager: true });
 const resolve = (name: string) => {
@@ -12,21 +13,26 @@ const resolve = (name: string) => {
   if (!hit) throw new Error(`PhotoStrip: missing src/assets/moments/${name}`);
   return hit[1].default;
 };
+const btn = 'w-9 h-9 grid place-items-center border border-line text-ink hover:border-brand hover:text-brand transition';
 ---
-<div class="photo-strip relative" data-photo-strip>
+<div class="photo-strip relative" data-photo-strip data-interval={interval}>
   <div class="flex justify-end gap-2 mb-3">
-    <button type="button" data-dir="-1" aria-label="Previous photos"
-            class="w-9 h-9 grid place-items-center border border-line text-ink hover:border-brand hover:text-brand transition disabled:opacity-30 disabled:pointer-events-none">←</button>
-    <button type="button" data-dir="1" aria-label="Next photos"
-            class="w-9 h-9 grid place-items-center border border-line text-ink hover:border-brand hover:text-brand transition disabled:opacity-30 disabled:pointer-events-none">→</button>
+    <button type="button" data-toggle aria-label="Pause slideshow" class={btn + ' hidden'}>
+      <span data-icon-pause aria-hidden="true">❚❚</span><span data-icon-play aria-hidden="true" class="hidden">▶</span>
+    </button>
+    <button type="button" data-dir="-1" aria-label="Previous photo" class={btn}>←</button>
+    <button type="button" data-dir="1" aria-label="Next photo" class={btn}>→</button>
   </div>
-  <ul class="strip-track flex gap-4 overflow-x-auto snap-x snap-mandatory pb-3" tabindex="0" role="region" aria-label={label}>
-    {items.map((m) => (
-      <li class="snap-start shrink-0">
-        <figure class="w-min">
-          <Image src={resolve(m.file)} alt={m.alt} height={288} densities={[1, 2]} format="webp" quality={80} loading="lazy"
-                 class="h-60 sm:h-72 w-auto max-w-[85vw] object-cover border border-line" />
-          <figcaption class="mt-2 mono text-[11px] leading-snug text-muted">{m.caption}</figcaption>
+  <ul class="strip-track flex gap-5 overflow-x-auto snap-x snap-mandatory pb-3" tabindex="0" role="region" aria-roledescription="carousel" aria-label={label}>
+    {items.map((m, i) => (
+      <li class="snap-start shrink-0 w-[min(20rem,82vw)] sm:w-[21rem]" aria-label={`${i + 1} of ${items.length}`}>
+        <figure>
+          <Image src={resolve(m.file)} alt={m.alt} width={672} densities={[1, 2]} format="webp" quality={80} loading="lazy"
+                 class="w-full aspect-[4/3] object-cover border border-line" style={m.pos ? `object-position:${m.pos}` : undefined} />
+          <figcaption class="mt-3">
+            <p class="text-[13px] leading-relaxed text-ink">{m.desc}</p>
+            <p class="mt-1.5 mono text-[11px] text-muted">{m.caption}</p>
+          </figcaption>
         </figure>
       </li>
     ))}
@@ -34,24 +40,66 @@ const resolve = (name: string) => {
 </div>
 
 <style>
-  .strip-track { scrollbar-width: thin; scroll-padding-inline: 0; }
+  .strip-track { scrollbar-width: none; }
+  .strip-track::-webkit-scrollbar { display: none; }
   .strip-track:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 4px; }
 </style>
 
 <script>
   document.querySelectorAll<HTMLElement>('[data-photo-strip]').forEach((root) => {
     const track = root.querySelector<HTMLElement>('.strip-track')!;
-    const [prev, next] = root.querySelectorAll<HTMLButtonElement>('button[data-dir]');
+    const slides = [...track.children] as HTMLElement[];
+    const toggle = root.querySelector<HTMLButtonElement>('[data-toggle]')!;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const update = () => {
-      prev.disabled = track.scrollLeft <= 2;
-      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    const delay = Number(root.dataset.interval) || 4500;
+
+    // Slide whose left edge is nearest the track's scroll position.
+    const current = () => {
+      const x = track.scrollLeft;
+      let best = 0;
+      slides.forEach((s, i) => {
+        if (Math.abs(s.offsetLeft - track.offsetLeft - x) < Math.abs(slides[best].offsetLeft - track.offsetLeft - x)) best = i;
+      });
+      return best;
     };
+    // Within half a slide of max scroll counts as the end, so the last step rewinds instead of nudging a few px.
+    const atEnd = () => track.scrollLeft >= track.scrollWidth - track.clientWidth - slides[0].offsetWidth / 2;
+    const go = (dir: number) => {
+      const i = dir > 0 && atEnd() ? 0 : (current() + dir + slides.length) % slides.length;
+      track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: reduced ? 'auto' : 'smooth' });
+    };
+
+    // Autoplay: `playing` is the user's choice; holds are temporary pauses (hover, focus, touch, off-screen, hidden tab).
+    let playing = !reduced;
+    const holds = new Set<string>();
+    let timer: number | undefined;
+    const schedule = () => {
+      clearTimeout(timer);
+      if (playing && holds.size === 0) timer = window.setTimeout(() => { go(1); schedule(); }, delay);
+    };
+    const hold = (k: string, on: boolean) => { on ? holds.add(k) : holds.delete(k); schedule(); };
+    const render = () => {
+      toggle.setAttribute('aria-label', playing ? 'Pause slideshow' : 'Play slideshow');
+      toggle.querySelector('[data-icon-pause]')!.classList.toggle('hidden', !playing);
+      toggle.querySelector('[data-icon-play]')!.classList.toggle('hidden', playing);
+    };
+
+    if (!reduced) toggle.classList.remove('hidden');
+    toggle.addEventListener('click', () => { playing = !playing; render(); schedule(); });
     root.querySelectorAll<HTMLButtonElement>('button[data-dir]').forEach((b) =>
-      b.addEventListener('click', () =>
-        track.scrollBy({ left: Number(b.dataset.dir) * track.clientWidth * 0.8, behavior: reduced ? 'auto' : 'smooth' })));
-    track.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
-    update();
+      b.addEventListener('click', () => { go(Number(b.dataset.dir)); schedule(); }));
+
+    track.addEventListener('mouseenter', () => hold('hover', true));
+    track.addEventListener('mouseleave', () => hold('hover', false));
+    track.addEventListener('focusin', () => hold('focus', true));
+    track.addEventListener('focusout', () => hold('focus', false));
+    // A swipe restarts the countdown rather than stopping playback.
+    track.addEventListener('touchstart', () => hold('touch', true), { passive: true });
+    track.addEventListener('touchend', () => hold('touch', false), { passive: true });
+    document.addEventListener('visibilitychange', () => hold('hidden', document.hidden));
+    new IntersectionObserver(([e]) => hold('offscreen', !e.isIntersecting), { threshold: 0.3 }).observe(track);
+
+    render();
+    schedule();
   });
 </script>
